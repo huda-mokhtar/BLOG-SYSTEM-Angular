@@ -1,36 +1,17 @@
-body{
-    padding-top:10px ;
-    background-repeat: no-repeat ;
-    background-size: cover ;
-    background-attachment: fixed ;
-}
-#registerDiv{
-    margin-top: 60px;
-}
-#form2{
-    margin: 20px;
-}
-.header{
-    padding:5px ;
-}
-.shadow{
-    box-shadow: 0 0.5rem 1rem grey !important;
-}
-.btn-primary{
-    color: #fff;
-    background-color: #bd2130;
-    border-color: #495057;
-}
-.btn-primary:hover {
-    color: #fff;
-    background-color:#2ebd21;
-    border-color:#495057;
-}
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle{
-    color: #fff;
-    background-color: #d63a4a;
-    border-color:#495057;
+.myform {
+  border-radius: 10px;
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+  text-align: center;
+  margin-top:60px;
 }
 input{
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+.submit{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+button{
   border-radius: 10px;
 }

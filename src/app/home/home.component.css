@@ -1,7 +1,7 @@
  p{
     margin-left:40px ;
-    background-color: rgb(200, 212, 212);
     width: 80%;
     height: 50px;
     text-align: center;
+    box-shadow:0 0 4px rgba(0,0,0,0.3);
 } 
