@@ -1,30 +1,42 @@
 <div class="container">
     <div class="myform container-fluid col-sm-5 offset-3 ">   
         <form class="text-center border border-light p-3 col-sm-11 mb-4" action="#!">
-            <p class="h2 mb-4">Sin Up</p>
+            <p class="h2 mb-4">Sign Up</p>
             <br>
             <div class="form-group mb-2">    
-                <input type="text" id="Fname" class="form-control mb-4" placeholder="Enter You First Name" required pattern="[A-Za-z]{3,140}">
+                <input type="text" id="Fname" [(ngModel)]="newUser.firstName" [ngModelOptions]="{standalone: true}" class="form-control mb-4" placeholder="Enter You First Name" required pattern="[A-Za-z]{3,140}">
             </div> 
             <div class="form-group mb-2">
-                <input type="text" id="UserName" class="form-control " placeholder="User Name" required pattern="[A-Za-z]{3,140}">
+                <input type="text" id="UserName" [(ngModel)]="newUser.username" [ngModelOptions]="{standalone: true}" class="form-control " placeholder="User Name" required pattern="[A-Za-z]{3,140}">
             </div>
                 <!-- Password -->
             <div class="form-group mb-2">
-                <input type="password" id="Password" class="form-control " placeholder="Password" required >
+                <input type="password" id="Password"  class="form-control"  placeholder="Password" required >
             </div>
             <div class="form-group mb-2">
-                <input type="password" id="Password2" class="form-control " placeholder="Confirm Password" required >
+                <input type="password" id="Password2" [(ngModel)]="newUser.password" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Confirm Password" required >
             </div>
             <br>
-        
+            <br>
+            <div class=" mb-1 row">
+                <div class="mb-2 col-sm-6">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                        <label class="custom-control-label" for="defaultLoginFormRemember" style="color: gray;">Remember me</label>
+                    </div>
+                </div>
+                <div class="mb-2 col-sm-6">
+                    <a href="">Forgot password?</a>
+                </div>
+            </div>
             <div  class="submit">
         <!-- Sign in button -->
-            
-                    <button class="btn btn-info btn-block my-4" type="submit">Register</button>
+                    <button class="btn btn-info btn-block my-4" (click)="registerUser()" type="submit">Register</button>
                 </div>
-            <br>
-            <br>
+                <p class="mb-2">Not a member?
+                    <a href="">Register</a>
+                </p>
+                <br>
         </form>
     </div>
 </div>

@@ -11,4 +11,7 @@ export class UserService {
   register(user:User){
     return this.http.post<User>(" https://blogsuser.herokuapp.com/users",user);
   } 
+  login(user:User){
+    return this.http.post<User>(" https://blogsuser.herokuapp.com/users/login",user);
+  }
 }
