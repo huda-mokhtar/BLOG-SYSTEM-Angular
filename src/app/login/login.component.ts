@@ -11,9 +11,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loggedUser : User= new User("","","",[],[]) ;
-
-  
-  constructor(public userService : UserService , public router : Router) { }
+  loginUser:any;
+  constructor(public userService : UserService , public router : Router) { 
+    this.loginUser=JSON.parse(localStorage.getItem('user'));
+  }
 
   ngOnInit(): void {
   }
