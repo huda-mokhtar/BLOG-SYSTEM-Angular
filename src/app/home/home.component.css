@@ -1,7 +1,81 @@
- p{
+ /* p{
     margin-left:40px ;
     width: 80%;
     height: 50px;
     text-align: center;
     box-shadow:0 0 4px rgba(0,0,0,0.3);
+}  */
+ /* p{
+    margin-left:40px ;
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    box-shadow:0 0 4px rgba(0,0,0,0.3);
+}  */
+.latest
+{
+    
+    font-size: 30px;
+    text-align: center;
+    color: gray; 
+    margin-bottom: 20px;
 } 
+.first,.second,.third,.four{
+   
+ 
+    text-align: center;
+     height: 250px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+   
+   
+}
+img[src=".//assets/comment.PNG"],img[src=".//assets/heart.PNG"]
+{
+    float:right;
+}
+.Description
+{
+    text-align: center;
+}
+/* .second{
+    margin-left:60px;
+} */
+
+p{
+    text-align: left;
+    font-size: 15px;
+   
+    
+    
+}
+ .first
+{ margin-left: 30px;
+  
+  text-align: center;
+  padding: 10px;
+ height: 200px; 
+background-color: lightgray;
+
+} 
+
+
+img[src=".//assets/pc.jpg"]{
+    height: 30%;
+    width: 100%;
+}
+
+.secondeow
+{
+    margin-left: 40px;
+
+}
+.more
+{
+  
+    
+    text-align: center;
+    margin-left: 80px;
+
+}
