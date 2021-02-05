@@ -1,8 +1,10 @@
+body{
+  background-color: gray;
+}
 .myform {
   border-radius: 10px;
-  box-shadow:0 0 4px rgba(0,0,0,0.3);
-  text-align: center;
-  margin-top:30px;
+  box-shadow:0 0 5px rgba(0,0,0,0.6);
+  margin-top:20px;
   margin-left: 100px;
 }
 input{
@@ -15,4 +17,9 @@ input{
 }
 button{
   border-radius: 10px;
+}
+label{
+  text-align: left;
+  margin-left: 0;
+  color:gray ;
 }
