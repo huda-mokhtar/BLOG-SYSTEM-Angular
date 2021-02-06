@@ -14,6 +14,7 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
+import { FollowersComponent } from './followers/followers.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     AddBlogComponent,
     EditBlogComponent,
     NotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
