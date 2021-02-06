@@ -1,39 +1,24 @@
-
-<div class="container">
-    <div class="myform container-fluid col-sm-5 offset-3 ">   
-        <form class="text-center border border-light p-3 col-sm-11 mb-4" action="#!">
-            <p class="h2 mb-4">Sign In</p>
-            <br>
-            <div class="form-group mb-2">
-                <input type="text" id="UserName"  class="form-control" [(ngModel)]="loggedUser.username" [ngModelOptions]="{standalone: true}" placeholder="User Name" required pattern="[A-Za-z]{3,140}">
-            </div>
-                <!-- Password -->
-            <div class="form-group mb-2">
-                <input type="password" id="Password"  class="form-control" [(ngModel)]="loggedUser.password" [ngModelOptions]="{standalone: true}" placeholder="Password" required >
-            </div>                
-            <br>
-            <div class=" mb-1 row">
-                <div class="mb-2 col-sm-6">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                        <label class="custom-control-label" for="defaultLoginFormRemember" style="color: gray;">Remember me</label>
-                    </div>
-                </div>
-                <div class="mb-2 col-sm-6">
-                    <a href="">Forgot password?</a>
-                </div>
-            </div>
-            <br> 
-            <div  class="submit">
-        <!-- Sign in button -->
-                    <button class="btn btn-info btn-block my-4" type="submit" (click)="login()">Login</button>
-                </div>
-                <p class="mb-2">Not a member?
-                    <a routerLink="/register">Register</a>
-                </p>
-                <br>
-            <br>
-            <br>
-        </form>
+<div class="container bootstrap snippets bootdey">
+    <div class="row login-page"> 
+        <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4"> 
+    		<img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="user-avatar img-thumbnail"> 
+    		<h1>Bootdey.com</h1> 
+    		<form role="form" class="ng-pristine ng-valid"> 
+    			<div class="form-content"> 
+    				<div class="form-group"> 
+    					<input type="text" class="form-control input-underline input-lg" [(ngModel)]="loggedUser.username" [ngModelOptions]="{standalone: true}" placeholder="User Name" required pattern="[A-Za-z]{3,140}"> 
+    				</div> 
+    				<div class="form-group"> 
+    					<input type="password" class="form-control input-underline input-lg" [(ngModel)]="loggedUser.password" [ngModelOptions]="{standalone: true}" placeholder="Password" required > 
+    				</div> 
+    			</div> 
+    			<button class="btn btn-info btn-lg" type="submit" (click)="login()">
+                    Log in
+    			</button> &nbsp; 
+                <a routerLink="/register" class="btn btn-info btn-lg"> Register</a>
+    			
+    		</form> 
+    	</div> 
     </div>
 </div>
+
