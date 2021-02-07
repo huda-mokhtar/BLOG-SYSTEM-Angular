@@ -18,6 +18,7 @@ import { FollowersComponent } from './followers/followers.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FollowingsComponent } from './followings/followings.component';
     FollowersComponent,
     TimelineComponent,
     AuthorBlogsComponent,
-    FollowingsComponent
+    FollowingsComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
