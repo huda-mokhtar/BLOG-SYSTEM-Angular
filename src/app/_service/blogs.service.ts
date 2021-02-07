@@ -15,7 +15,8 @@ export class BlogsService {
   getAll(){
     return this.http.get<Blogs[]>("http://localhost:3000/blogs");
   } 
-  createBlog(blog:Blogs){
+  createBlog(blog:any){
+    console.log(blog);
     return this.http.post<Blogs>("http://localhost:3000/blogs/create",blog,{ headers: { authorization: this.loginUser.token } });
    }
    deleteBlog(id:number){

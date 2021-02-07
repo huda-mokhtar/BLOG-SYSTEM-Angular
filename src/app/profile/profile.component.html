@@ -81,16 +81,27 @@
     </div><!-- /.profile-cover -->
     <div class="divider"></div>
     <div class="panel rounded shadow">
-        <form action="...">
-            <textarea class="form-control input-lg no-border" rows="2" placeholder="What are you doing?..."></textarea>
-        </form>
+        <!-- <form action="..."> -->
+            <input class="form-control input-lg no-border" [(ngModel)]="blog.title" rows="2" placeholder="What is your title?...">
+            <input class="form-control input-lg no-border"  [(ngModel)]="blog.body" rows="2" placeholder="What are you doing?...">
+        <!-- </form> -->
         <div class="panel-footer">
-            <button class="btn btn-success pull-right mt-5">POST</button>
+            <button class="btn btn-success pull-right mt-5" (click)="post()">POST</button>
             <ul class="nav nav-pills">
-                <li><a href="#"><i class="fa fa-user"></i></a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
-                <li><a href="#"><i class="fa fa-camera"></i></a></li>
-                <li><a href="#"><i class="fa fa-smile-o"></i></a></li>
+                <li><a ><i class="fa fa-user"></i></a></li>
+                <li><a ><i class="fa fa-map-marker"></i></a></li>
+                 <!-- <img  id="userImg" [src]="imageURL " *ngIf="imageURL && imageURL !== ''" /> -->
+                <span id="cam">
+                <label for="file-input">
+                    <li><a><i class="fa fa-camera" ></i></a></li>
+                  </label>
+                  <input id="file-input" type="file" (change)="onFileSelect($event)" />
+                </span>
+
+               
+         
+              
+                <li><a><i class="fa fa-smile-o"></i></a></li>
             </ul><!-- /.nav nav-pills -->
         </div><!-- /.panel-footer -->
     </div><!-- /.panel -->
