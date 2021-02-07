@@ -16,11 +16,18 @@ export class FollowersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.userservice.Followers().subscribe(a=>{
       this.users=a;
     })
-
   }
+  /* follow(){
+      this.
+  }
+  unfollow(){
+      
+  }
+ */
+
+
 
 }

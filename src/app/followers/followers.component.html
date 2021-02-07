@@ -13,7 +13,13 @@
                     <p class="text-muted">1km away</p>
                   </div>
                   <div class="col-md-3 col-sm-3">
-                    <button class="btn btn-primary pull-right">FOLLOW</button>
+                    <!-- <div class="btn btn-primary pull-right"><span class="initialText">Following</span><span class="hoverText">Unfollow</span></div> -->
+                     <button class="btn btn-primary pull-right follow " id="follow" >Follow</button>
+                     <!--<button class="btn btn-primary pull-right" style="display: none;" (click)="unfollow()">Unfollow</button> -->
+
+
+                     <!-- <button id="follow" class="btn btn-primary pull-right" data-toggle="button">Follow Activities</button>
+                     <button id="unfollow" class=" hidden btn btn-primary pull-right hidden">Unfollow Activities</button> -->
                   </div>
                 </div>
               </div>
@@ -21,3 +27,13 @@
     	</div>
 	</div>
 </div>
+
+<script>
+  let follow = document.getElementById("follow");
+  follow.onclick=function(){
+    follow.classList.add('hidden')
+  }
+  /* $("#follow, #unfollow").click(function () {
+    $("#follow, #unfollow").toggleClass('hidden');
+}); */
+</script>
