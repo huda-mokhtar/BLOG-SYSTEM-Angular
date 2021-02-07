@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-success rounded shadow">
+            <div class="panel-heading no-border" *ngFor="let item of blogs">
+                <div class="line no-margin"></div><!-- /.line -->
+                <div class="media inner-all no-margin"  >
+                    <div class="pull-left">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="..." class="img-post2">
+                        <p>{{item.author.username}}</p>
+                   <!-- /.pull-left -->
+                    <div class="media-body" >
+                        <h3 class="block text-muted">{{item.title}} </h3>
+                        <small class="block text-muted">{{item.body}} </small>
+                        <em class="text-xs text-muted">Posted on <span class="text-danger">{{item.creartedate}}</span></em>
+                    </div><!-- /.media-body -->
+                    </div>
+                </div><!-- /.media -->
+                <div class="line no-margin"></div><!-- /.line -->
+                <div class="panel-footer">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-group has-feedback no-margin">
+                            <input class="form-control" type="text" placeholder="Your comment here...">
+                            <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
+                        </div>
+                    </form>
+                </div><!-- /.panel-footer -->
+            </div><!-- /.panel-body -->
+        </div><!-- /.panel -->
+    </div>
+    

@@ -1,4 +1,5 @@
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<app-header></app-header>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <section class="content-item grey" id="blog-timeline">
             <div class="container">
                 <div class="row">
@@ -11,8 +12,8 @@
                           <!-- BLOG POST 1 - START -->
                             <div class="blog-post"  *ngFor="let item of blogs">
                               <div class="blog-info">
-                                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-responsive" alt="">
-                                    <div class="date"><div class="number">18</div><div>Dec</div></div>
+                                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="img-responsive" alt="">
+                                    <div class="date"><div class="number">18</div><div>{{item.author.username}}</div></div>
                                 </div>
                                 <h3><a>{{item.title}}</a></h3>
                                 <div class="date-xs">18/12/2014</div>
@@ -60,7 +61,7 @@
                             <h3>Recent Posts</h3>
                             <div class="box posts">
                                 <ul class="list-unstyled">
-                                    <li *ngFor="let item of blogs"><i class="fa fa-chevron-right"></i><a >{{item.title}}</a><div>27/02/2014</div></li>
+                                    <li *ngFor="let item of blogs"><i class="fa fa-chevron-right"></i><a >{{item.title}}</a><div>{{item.creartedate.tolocalDataString}}</div></li>
                                    
                                 </ul>
                             </div>

@@ -15,6 +15,9 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { FollowersComponent } from './followers/followers.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
+import { FollowingsComponent } from './followings/followings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { FollowersComponent } from './followers/followers.component';
     EditBlogComponent,
     NotFoundComponent,
     AboutComponent,
-    FollowersComponent
+    FollowersComponent,
+    TimelineComponent,
+    AuthorBlogsComponent,
+    FollowingsComponent
   ],
   imports: [
     BrowserModule,

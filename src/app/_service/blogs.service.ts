@@ -13,23 +13,22 @@ export class BlogsService {
    this.loginUser=JSON.parse(localStorage.getItem('user'));
   }
   getAll(){
-    console.log("local",this.loginUser.token);
-    return this.http.get<Blogs[]>("https://blogsuser.herokuapp.com/blogs");
+    return this.http.get<Blogs[]>("http://localhost:3000/blogs");
   } 
   createBlog(blog:Blogs){
-    return this.http.post<Blogs>("https://blogsuser.herokuapp.com/blogs/create",blog,{ headers: { authorization: this.loginUser.token } });
+    return this.http.post<Blogs>("http://localhost:3000/blogs/create",blog,{ headers: { authorization: this.loginUser.token } });
    }
    deleteBlog(id:number){
-     return this.http.delete<Blogs>("https://blogsuser.herokuapp.com/blogs/"+id,{ headers: { authorization: this.loginUser.token } });
+     return this.http.delete<Blogs>("http://localhost:3000/blogs/"+id,{ headers: { authorization: this.loginUser.token } });
    }
    updateBlog(id:number,blog:Blogs){
-     return this.http.patch<Blogs>('https://blogsuser.herokuapp.com/blogs/'+id,blog,{ headers: { authorization: this.loginUser.token } });
+     return this.http.patch<Blogs>('http://localhost:3000/blogs/'+id,blog,{ headers: { authorization: this.loginUser.token } });
    }
    followingsBlogs() {
-    return this.http.get<Blogs[]>('https://blogsuser.herokuapp.com/blogs/followings',{ headers: { authorization: this.loginUser.token } });
+    return this.http.get<Blogs[]>('http://localhost:3000/blogs/followings',{ headers: { authorization: this.loginUser.token } });
   }
   profile() {
-    return this.http.get<Blogs[]>(' https://blogsuser.herokuapp.com/blogs/myprofile',{ headers: { authorization: this.loginUser.token } });
+    return this.http.get<Blogs[]>('http://localhost:3000/blogs/myprofile',{ headers: { authorization: this.loginUser.token } });
   }
 
 

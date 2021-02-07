@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
   login(){
     this.userService.login(this.loggedUser).subscribe(
       a => {
-        console.log(a);
         this.loggedUser = a ;
         localStorage.setItem('user',JSON.stringify(a));
-        
         this.router.navigate(['/profile']);
       },
       err => {console.log(err); }
     );
   }
+  
+ 
 
 }

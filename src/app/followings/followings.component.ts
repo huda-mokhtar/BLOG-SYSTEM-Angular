@@ -3,12 +3,13 @@ import { User } from '../models/user';
 import { UserService } from '../_service/user.service';
 
 @Component({
-  selector: 'app-followers',
-  templateUrl: './followers.component.html',
-  styleUrls: ['./followers.component.css']
+  selector: 'app-followings',
+  templateUrl: './followings.component.html',
+  styleUrls: ['./followings.component.css']
 })
-export class FollowersComponent implements OnInit {
- users:User[];
+export class FollowingsComponent implements OnInit {
+
+  users:User[];
  userid:any;
  
   constructor(public userservice:UserService) { 
@@ -17,7 +18,7 @@ export class FollowersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userservice.Followers().subscribe(a=>{
+    this.userservice.Followings().subscribe(a=>{
       this.users=a;
     })
 
