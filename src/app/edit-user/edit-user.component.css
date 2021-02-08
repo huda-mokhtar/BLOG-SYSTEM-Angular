@@ -13,6 +13,9 @@ body{
     margin-left: 10px;
     display: inline-block
     }
+    .edit{
+        margin-right: 10px;
+    }
     
     .view-account .side-bar {
     padding-bottom: 30px

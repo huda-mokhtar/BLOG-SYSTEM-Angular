@@ -1,4 +1,6 @@
 export class User {
     constructor(public username:string, public password:string ,
-        public firstName:string,public followers:Array<object>,public followings:Array<object> ){}
+        public firstName:string ,public lastName:string , public email:string,
+        public job:string, public age:number,
+        public followers:Array<object>,public followings:Array<object> ){}
 }

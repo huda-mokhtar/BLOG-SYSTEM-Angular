@@ -12,6 +12,8 @@ import { FollowersComponent } from './followers/followers.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
+import { EditUserComponent } from './edit-user/edit-user.component'
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -27,8 +29,8 @@ const routes: Routes = [
   {path:'editBlog',component:EditBlogComponent},
   {path:'about',component:AboutComponent},
   {path:"",component:HomeComponent},
-  {path:"*",component:NotFoundComponent}
-
+  {path:"*",component:NotFoundComponent},
+  {path:'editUser',component:EditUserComponent}
 ];
 
 @NgModule({

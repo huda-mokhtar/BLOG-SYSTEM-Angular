@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loggedUser : User= new User("","","",[],[]) ;
+  loggedUser : User= new User("","","","","","",0,[],[]); ;
   loginUser:any;
   constructor(public userService : UserService , public router : Router) { 
     this.loginUser=JSON.parse(localStorage.getItem('user'));
