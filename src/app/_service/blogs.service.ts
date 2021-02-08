@@ -19,11 +19,11 @@ export class BlogsService {
     console.log(blog);
     return this.http.post<Blogs>("http://localhost:3000/blogs/create",blog,{ headers: { authorization: this.loginUser.token } });
    }
-   deleteBlog(id:number){
-     return this.http.delete<Blogs>("http://localhost:3000/blogs/"+id,{ headers: { authorization: this.loginUser.token } });
+   deleteBlog(){
+     return this.http.delete<Blogs>("http://localhost:3000/blogs/"+this.loginUser._id,{ headers: { authorization: this.loginUser.token } });
    }
-   updateBlog(id:number,blog:Blogs){
-     return this.http.patch<Blogs>('http://localhost:3000/blogs/'+id,blog,{ headers: { authorization: this.loginUser.token } });
+   updateBlog(blog:Blogs){
+     return this.http.patch<Blogs>('http://localhost:3000/blogs/'+this.loginUser._id,blog,{ headers: { authorization: this.loginUser.token } });
    }
    followingsBlogs() {
     return this.http.get<Blogs[]>('http://localhost:3000/blogs/followings',{ headers: { authorization: this.loginUser.token } });
