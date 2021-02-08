@@ -40,8 +40,8 @@ export class ProfileComponent implements OnInit {
     this.newblog.append('title',this.blog.title);
     this.newblog.append('body', this.blog.body);
     this.blogsservice.createBlog(this.newblog).subscribe(a=>{
-      console.log(a);
-      this.router.navigate(['/profile/autherblogs']);
+    console.log(a);
+    this.router.navigate(['/profile/autherblogs']);
     })
   }
 }
