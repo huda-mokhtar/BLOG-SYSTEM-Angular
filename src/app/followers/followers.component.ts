@@ -12,23 +12,21 @@ export class FollowersComponent implements OnInit {
  users:User[];
  userid:any;
  
-  constructor(public userservice:UserService) 
-  { 
+  constructor(public userservice:UserService) { 
     this.userid= userservice.loginUser.id;
   }
 
+  public isFollow: boolean = false;
+ 
   ngOnInit(): void {
-    this.userservice.Followers().subscribe(a=>{
+     this.userservice.Followers().subscribe(a=>{
       this.users=a;
-    })
+    }) 
   }
-  /* follow(){
-      this.
+  onClick(){
+    this.isFollow = !this.isFollow;
+
   }
-  unfollow(){
-      
-  }
- */
 
 
 

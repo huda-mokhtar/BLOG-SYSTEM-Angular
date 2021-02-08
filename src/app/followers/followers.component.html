@@ -13,13 +13,12 @@
                     <p class="text-muted">1km away</p>
                   </div>
                   <div class="col-md-3 col-sm-3">
-                    <!-- <div class="btn btn-primary pull-right"><span class="initialText">Following</span><span class="hoverText">Unfollow</span></div> -->
-                     <button class="btn btn-primary pull-right follow " id="follow" >Follow</button>
-                     <!--<button class="btn btn-primary pull-right" style="display: none;" (click)="unfollow()">Unfollow</button> -->
-
-
-                     <!-- <button id="follow" class="btn btn-primary pull-right" data-toggle="button">Follow Activities</button>
-                     <button id="unfollow" class=" hidden btn btn-primary pull-right hidden">Unfollow Activities</button> -->
+                     <button class="pull-right btn btn-primary " id="follow" [ngClass]="{'followup' : isFollow == true,
+                     'unfollow' : isFollow== false }" 
+                     (click)="onClick()">
+                      {{isFollow == true ? 'Unfollow' : (isFollow == false ? 'Follow' : '')}}
+                    </button>
+                     
                   </div>
                 </div>
               </div>

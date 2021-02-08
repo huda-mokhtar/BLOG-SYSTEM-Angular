@@ -1,3 +1,14 @@
+.followup{
+ background-color: grey;
+ color: white;
+
+}
+
+.unfollow{
+  background-color:mediumblue ;
+
+ color: white;
+}
 body{
     margin-top:20px;
     background:#FAFAFA;    
@@ -33,6 +44,3 @@ img.profile-photo-lg{
   border-radius: 50%;
 }
 
-.hidden {
-  display: none;
-}
