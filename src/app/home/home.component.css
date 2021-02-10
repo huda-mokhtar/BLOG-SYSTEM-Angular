@@ -82,10 +82,12 @@ body{margin-top:20px;}
 	font-size:14px;
 	line-height:23px;
 	text-align:justify;
+	
 }
 
 .blog-post p img {
-	max-width:200px;	
+	max-width:200px;
+		
 }
 
 .blog-post p img.pull-right {

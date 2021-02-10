@@ -1,59 +1,27 @@
-<!-- <div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-success rounded shadow">
-            <div class="panel-heading no-border" *ngFor="let item of blogs">
-                <div class="line no-margin"></div>
-                <div class="media inner-all no-margin"  >
-                    <div class="pull-left">
-                  
-                    <div class="media-body" >
-                        <h3 class="block text-muted">{{item.title}} </h3>
-                        <small class="block text-muted">{{item.body}} </small>
-                        <em class="text-xs text-muted">Posted on <span class="text-danger">{{item.creartedate}}</span></em>
-                    </div>
-                    </div>
-                </div>
-                <div class="line no-margin"></div>
-                <div class="panel-footer">
-                    <form action="#" class="form-horizontal">
-                        <div class="form-group has-feedback no-margin">
-                            <input class="form-control" type="text" placeholder="Your comment here...">
-                            <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-success rounded shadow" *ngFor="let item of blogs">
                 <ul class="timeline" >
                     <li>
-                        <!-- begin timeline-time -->
-                        <!-- <div class="timeline-time">
-                            <span class="date">today</span>
-                            <span class="time">04:20</span>
-                        </div> -->
-                        <!-- end timeline-time -->
-                        <!-- begin timeline-icon -->
-                        <!-- <div class="timeline-icon">
-                            <a href="javascript:;">&nbsp;</a>
-                        </div> -->
-                        <!-- end timeline-icon -->
-                        <!-- begin timeline-body -->
                         <div class="timeline-body">
                             <div>
                                <!--  <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                         alt=""></span>
                                 <span class="username"><a href="javascript:;">{{item.author.username}}</a>
                                     <small></small></span> -->
-                                <span class="pull-right text-muted"><a><i class="fa fa-cog pull-right"></i></a></span>
+                                
+
+                                <span class="pull-right text-muted"></span>
+                               
+                                <span class="pull-right text-muted" ><a style="cursor: pointer;"><i class="fa fa-cog w3-xlarge"></i></a>
+                                
+                                <a style="pointer-events: all;" ><i class="fa fa-trash w3-xlarge" (click)="delete()" style="cursor: pointer;color:red"></i></a>
+                            </span>
+                                <!-- <span class="pull-right text-muted mr-2"><a><i class="glyphicon glyphicon-remove"></i></a></span> -->
                             </div>
                             <div class="timeline-content">
-                                <p>
+                                <p class="h3">
                                     {{item.title}}
                                 </p>
                                 <p>
