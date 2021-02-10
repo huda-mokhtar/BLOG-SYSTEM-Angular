@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       a => {
         this.loggedUser = a ;
         localStorage.setItem('user',JSON.stringify(a));
-        this.router.navigate(['/profile']);
+        this.router.navigate(["/profile/timeline"]);
       },
       err => {console.log(err); }
     );
