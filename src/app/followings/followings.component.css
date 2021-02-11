@@ -2,6 +2,17 @@ body{
     margin-top:20px;
     background:#FAFAFA;    
 }
+.followup{
+  background-color: grey;
+  color: white;
+ 
+ }
+ 
+ .unfollow{
+   background-color:rgb(245, 57, 57);
+ 
+  color: white;
+ }
 /*==================================================
   Nearby People CSS
   ==================================================*/

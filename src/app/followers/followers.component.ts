@@ -23,9 +23,24 @@ export class FollowersComponent implements OnInit {
       this.users=a;
     }) 
   }
-  onClick(){
+  onClick(id:any){
     this.isFollow = !this.isFollow;
-
+    if(this.isFollow){
+      this.userservice.follow(id).subscribe(
+        user=>{
+          console.log(id);
+          console.log("i start following blablaa ");
+        }
+      )
+    }else{
+      this.userservice.unfollow(id).subscribe(
+        user=>{
+          console.log(id);
+          console.log("i unfollow blablaa ");
+        }
+      )
+    }
+    
   }
 
   

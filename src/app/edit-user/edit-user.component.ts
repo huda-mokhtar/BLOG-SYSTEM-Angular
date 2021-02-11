@@ -19,7 +19,7 @@ export class EditUserComponent implements OnInit {
     this.userservice.update(this.user).subscribe(
         d =>{
           console.log(this.user);
-          this.r.navigateByUrl('/profile') ;
+          this.r.navigateByUrl('/profile/timeline') ;
         }      
     )
   }

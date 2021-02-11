@@ -19,7 +19,7 @@ export class BlogsService {
     console.log(blog);
     return this.http.post<Blogs>("http://localhost:3000/blogs/create",blog,{ headers: { authorization: this.loginUser.token } });
    }
-   deleteBlog(id:Number){
+   deleteBlog(id:any){
      return this.http.delete<Blogs>('http://localhost:3000/blogs/'+id ,{ headers: { authorization: this.loginUser.token } });
    }
    updateBlog(blog:Blogs){
