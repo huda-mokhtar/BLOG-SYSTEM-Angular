@@ -13,8 +13,31 @@
 
                                 <span class="pull-right text-muted"></span>
                                
-                                <span class="pull-right text-muted" ><a style="cursor: pointer;"><i class="fa fa-cog w3-xlarge"></i></a>
+                                <span class="pull-right text-muted" >
+                                    <button class="btn btn-secondary" (click)="openVerticallyCentered(content)">edit</button>
+                                    <!--<a style="cursor: pointer;" data-toggle="modal" data-target="#myModal"> <i class="fa fa-cog w3-xlarge" ></i></a> -->
                                 
+                                    <ng-template #content let-modal>
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Modal title</h4>
+                                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>One fine body&hellip;</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+                                        </div>
+                                      </ng-template>
+
+
+
+
+
+
+
                                 <a style="pointer-events: all;" ><i class="fa fa-trash w3-xlarge" (click)="delete(item._id)" style="cursor: pointer;color:red"></i></a>
                             </span>
                                 <!-- <span class="pull-right text-muted mr-2"><a><i class="glyphicon glyphicon-remove"></i></a></span> -->
