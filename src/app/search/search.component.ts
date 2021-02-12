@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Blogs } from '../models/blogs';
+import { BlogsService } from '../_service/blogs.service';
 
 @Component({
   selector: 'app-search',
@@ -6,12 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-@Input()search:string;
-
-  constructor() { 
+@Input() blogs:Blogs[];
+  constructor(public blogsservice:BlogsService) { 
   }
 
   ngOnInit(): void {
-  }
+   
+}
 
+
+  
 }

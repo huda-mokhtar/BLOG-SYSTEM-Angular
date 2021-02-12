@@ -12,7 +12,7 @@ export class AuthorBlogsComponent implements OnInit {
   blogs:Blogs[];
   deletedBlog :Blogs;
   
-  constructor(public blogsservice:BlogsService ,  public ar:ActivatedRoute, public r:Router) { }
+  constructor(public blogsservice:BlogsService ,  public ar:ActivatedRoute, public route:Router) { }
 
   ngOnInit(): void {
      this.blogsservice.profile().subscribe(a=>{
@@ -25,13 +25,13 @@ export class AuthorBlogsComponent implements OnInit {
     }) 
   }
   delete(id:any){
+    if(window.confirm('Are sure you want to delete this item ?')){
     this.blogsservice.deleteBlog(id).subscribe(
       d=>
       {
-        this.r.navigateByUrl('/profile/autherblogs');
-        console.log(id);
+        this.route.navigateByUrl('/profile/autherblogs');
       }
     )
+    }
   }
-
 }

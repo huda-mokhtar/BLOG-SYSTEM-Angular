@@ -10,6 +10,7 @@ import { BlogsService } from '../_service/blogs.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  blogs:Blogs[];
   search:string;
   username: any;
   selectedFile: File;
@@ -46,7 +47,11 @@ export class ProfileComponent implements OnInit {
     })
   }
   onKey(){
-    console.log(this.search);
+    console.log("-------",this.search);
+    this.blogsservice.searchTageTitle(this.search).subscribe(a=>{
+      this.blogs=a;
+      console.log(a);
+    })
     this.router.navigate(['/profile/search']);
   }
 }

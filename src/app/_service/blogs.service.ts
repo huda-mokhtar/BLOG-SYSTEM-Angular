@@ -31,6 +31,9 @@ export class BlogsService {
   profile() {
     return this.http.get<Blogs[]>('http://localhost:3000/blogs/myprofile',{ headers: { authorization: this.loginUser.token } });
   }
+  searchTageTitle(ser:string) {
+    return this.http.get<Blogs[]>('http://localhost:3000/blogs/search/'+ser,{ headers: { authorization: this.loginUser.token } });
+  }
 
 
 }
