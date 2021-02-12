@@ -21,10 +21,10 @@ export class TimelineComponent implements OnInit {
   }
   getProfile(user:string ){
     this.blogsservice.searchByAuthor(user).subscribe(a=>{
-    this.bloger_blogs=a;
-    console.log("bloger_blogs",a);
-  })
-
+      this.bloger_blogs=a;
+      console.log("bloger_blogs",a);
+    })
+  
   }
 
 }
