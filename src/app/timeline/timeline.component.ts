@@ -9,6 +9,7 @@ import { BlogsService } from '../_service/blogs.service';
 })
 export class TimelineComponent implements OnInit {
   blogs:Blogs[];
+  bloger_blogs:Blogs[];
   constructor(public blogsservice:BlogsService) {
    }
 
@@ -17,6 +18,13 @@ export class TimelineComponent implements OnInit {
       this.blogs=a;
       console.log(a);
     })
+  }
+  getProfile(user:string ){
+    this.blogsservice.searchByAuthor(user).subscribe(a=>{
+    this.bloger_blogs=a;
+    console.log("bloger_blogs",a);
+  })
+
   }
 
 }
