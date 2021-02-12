@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="people-nearby">
-              <div class="nearby-user" *ngFor="let item of followingsArr">
+              <div class="nearby-user" *ngFor="let item of followersArr">
                 <div class="row">
                   <div class="col-md-2 col-sm-2">
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="user" class="profile-photo-lg">
@@ -12,9 +12,8 @@
                     <p>{{item.job}}</p>
                     <p class="text-muted">{{item.email}}</p>
                   </div>
-                  <div class="col-md-3 col-sm-3" *ngFor="let items of followersArr">
+                  <div class="col-md-3 col-sm-3" *ngIf ="!followingsArr.include('item._id')">
                       <button class="pull-right btn btn-primary " id="follow" 
-                      *ngIf ="item._id != items._id"
                      (click)="onClick($event,item._id)">
                       Follow
                     </button>  

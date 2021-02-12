@@ -20,7 +20,11 @@ import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< Updated upstream
 import { SearchComponent } from './search/search.component';
+=======
+import { BloggersComponent } from './bloggers/bloggers.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { SearchComponent } from './search/search.component';
     AuthorBlogsComponent,
     FollowingsComponent,
     EditUserComponent,
+<<<<<<< Updated upstream
     SearchComponent
+=======
+    BloggersComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

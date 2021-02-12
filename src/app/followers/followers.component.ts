@@ -21,10 +21,10 @@ export class FollowersComponent implements OnInit {
  
   ngOnInit(): void {
      this.userservice.Followers().subscribe(a=>{
-      this.followingsArr=a;
-    }) ;
-    this.userservice.Followers().subscribe(a=>{
       this.followersArr=a;
+    }) ;
+    this.userservice.Followings().subscribe(a=>{
+      this.followingsArr=a;
     })
   }
   onClick(e:any,id:any){
