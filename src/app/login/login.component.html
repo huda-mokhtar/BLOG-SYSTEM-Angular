@@ -12,9 +12,9 @@
     					<input type="password" class="form-control input-underline input-lg" [(ngModel)]="loggedUser.password" [ngModelOptions]="{standalone: true}" placeholder="Password" required > 
     				</div> 
     			</div> 
-    			<button class="btn btn-info btn-lg" type="submit" (click)="login()">
+    			<a class="btn btn-info btn-lg" type="submit" (click)="login($event)">
                     Log in
-    			</button> &nbsp; 
+				</a> &nbsp; 
                 <a routerLink="/register" class="btn btn-info btn-lg"> Register</a>
     			
     		</form> 

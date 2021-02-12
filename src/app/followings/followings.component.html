@@ -2,22 +2,20 @@
     <div class="row">
         <div class="col-md-8">
             <div class="people-nearby">
-              <div class="nearby-user" *ngFor="let item of users ">
+              <div class="nearby-user" *ngFor="let item of followingsArr">
                 <div class="row">
                   <div class="col-md-2 col-sm-2">
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="user" class="profile-photo-lg">
                   </div>
                   <div class="col-md-7 col-sm-7">
                     <h5><a href="#" class="profile-link">{{item.firstName}}</a></h5>
-                    <p>General Manager at Manager</p>
-                    <p class="text-muted">1km away</p>
+                    <p>{{item.job}}</p>
+                    <p class="text-muted">{{item.email}}</p>
                   </div>
                   <div class="col-md-3 col-sm-3">
-                    <!-- <button class="btn btn-primary pull-right">FOLLOW</button> -->
-                    <button class="btn btn-primary pull-right " id="follow" [ngClass]="{'followup' : isFollow == true,
-                    'unfollow' : isFollow== false }" 
-                    (click)="onClick(item._id)">
-                     {{isFollow == true ? 'Follow' : (isFollow == false ? 'Unfollow' : '')}}
+                    <button class="pull-right btn btn-danger"  id="follow" 
+                    (click)="onClick($event,item._id)">
+                    Unfollow
                    </button>
                   </div>
                 </div>
