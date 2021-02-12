@@ -34,6 +34,9 @@ export class BlogsService {
   searchTageTitle(ser:string) {
     return this.http.get<Blogs[]>('http://localhost:3000/blogs/search/'+ser,{ headers: { authorization: this.loginUser.token } });
   }
+  searchByAuthor(username:string) {
+    return this.http.get<Blogs[]>('http://localhost:3000/blogs/author/'+username,{ headers: { authorization: this.loginUser.token } });
+  }
 
 
 }
