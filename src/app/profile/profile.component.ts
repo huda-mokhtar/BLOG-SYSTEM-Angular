@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
-  post() {
+  post(e) {
     this.newblog.append('title',this.blog.title);
     this.newblog.append('body', this.blog.body);
     this.blogsservice.createBlog(this.newblog).subscribe(a=>{

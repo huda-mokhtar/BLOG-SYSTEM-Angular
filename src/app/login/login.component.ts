@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
       a => {
         this.loggedUser = a ;
         localStorage.setItem('user',JSON.stringify(a));
-         this.router.navigate(["/profile/timeline"]); 
+        //  this.router.navigate(["/profile/timeline"]); 
         /* e.target.setAttribute("href", "http://localhost:3000/blogs/myprofile"); */
-        /* e.target.setAttribute("routerLink", "/profile/timeline") */
+         e.target.setAttribute("href", "/profile/timeline");
       },
       err => {console.log(err); }
     );
