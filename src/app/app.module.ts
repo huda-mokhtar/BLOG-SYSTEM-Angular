@@ -11,7 +11,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AddBlogComponent } from './add-blog/add-blog.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
@@ -21,6 +20,7 @@ import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     HeaderComponent,
     ProfileComponent,
-    AddBlogComponent,
     EditBlogComponent,
     NotFoundComponent,
     AboutComponent,
@@ -38,7 +37,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TimelineComponent,
     AuthorBlogsComponent,
     FollowingsComponent,
-    EditUserComponent
+    EditUserComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

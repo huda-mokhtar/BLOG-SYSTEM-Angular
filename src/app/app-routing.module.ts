@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { AddBlogComponent } from './add-blog/add-blog.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +13,7 @@ import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
 import { EditUserComponent } from './edit-user/edit-user.component'
 import { from } from 'rxjs';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -24,8 +24,8 @@ const routes: Routes = [
     {path:'timeline',component:TimelineComponent},
     {path:'followings',component:FollowingsComponent},
     {path:'followers',component:FollowersComponent},
+    {path:'search',component:SearchComponent},
   ]},
-  {path:'addBlog',component:AddBlogComponent},
   {path:'editBlog',component:EditBlogComponent},
   {path:'about',component:AboutComponent},
   {path:"",component:HomeComponent},

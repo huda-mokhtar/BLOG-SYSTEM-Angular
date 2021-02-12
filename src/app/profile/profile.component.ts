@@ -10,6 +10,7 @@ import { BlogsService } from '../_service/blogs.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  search:string;
   username: any;
   selectedFile: File;
   addForm: FormGroup;
@@ -43,5 +44,9 @@ export class ProfileComponent implements OnInit {
     console.log(a);
     this.router.navigate(['/profile/autherblogs']);
     })
+  }
+  onKey(){
+    console.log(this.search);
+    this.router.navigate(['/profile/search']);
   }
 }
