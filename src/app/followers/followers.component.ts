@@ -9,8 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./followers.component.css']
 })
 export class FollowersComponent implements OnInit {
- users:User[];
+ followingsArr:User[];
  userid:any;
+ followersArr:User[];
  
   constructor(public userservice:UserService) { 
     this.userid= userservice.loginUser.id;
@@ -20,10 +21,13 @@ export class FollowersComponent implements OnInit {
  
   ngOnInit(): void {
      this.userservice.Followers().subscribe(a=>{
-      this.users=a;
-    }) 
+      this.followingsArr=a;
+    }) ;
+    this.userservice.Followers().subscribe(a=>{
+      this.followersArr=a;
+    })
   }
-  onClick(id:any){
+  onClick(e:any,id:any){
     this.isFollow = !this.isFollow;
     if(this.isFollow){
       this.userservice.follow(id).subscribe(
@@ -32,6 +36,9 @@ export class FollowersComponent implements OnInit {
           console.log("i start following blablaa ");
         }
       )
+      e.target.classList.remove("btn-primary");
+      e.target.classList.add("btn-danger") ;
+      e.target.innerText = "Unfollow"
     }else{
       this.userservice.unfollow(id).subscribe(
         user=>{
@@ -39,6 +46,9 @@ export class FollowersComponent implements OnInit {
           console.log("i unfollow blablaa ");
         }
       )
+      e.target.classList.remove("btn-danger");
+      e.target.classList.add("btn-primary") ;
+      e.target.innerText = "Follow"
     }
     
   }

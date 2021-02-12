@@ -9,22 +9,30 @@ import { UserService } from '../_service/user.service';
 })
 export class FollowingsComponent implements OnInit {
 
-  users:User[];
+  followingsArr:User[];
+  followersArr:User[];
  userid:any;
  
   constructor(public userservice:UserService) { 
     this.userid= userservice.loginUser.id;
   }
-  public isFollow: boolean = false;
+ public isFollow: boolean = false;
   ngOnInit(): void {
 
     this.userservice.Followings().subscribe(a=>{
-      this.users=a;
+      this.followingsArr=a;
+    });
+    this.userservice.Followers().subscribe(a=>{
+      this.followersArr=a;
     })
 
   }
-  onClick(id:any){
-    this.isFollow = !this.isFollow;
+  onClick(e:any,id:any){
+    console.log(e.target);
+    /* e.target.style.backgroundColor = "green";
+    e.target.innerText = "waffaf" */
+  
+ this.isFollow = !this.isFollow;
     if(!this.isFollow){
       this.userservice.follow(id).subscribe(
         user=>{
@@ -32,13 +40,19 @@ export class FollowingsComponent implements OnInit {
           console.log("i start following blablaa ");
         }
       )
+      e.target.classList.remove("btn-primary");
+      e.target.classList.add("btn-danger") ;
+      e.target.innerText = "Unfollow"
     }else{
       this.userservice.unfollow(id).subscribe(
         user=>{
           console.log(id);
           console.log("i unfollow blablaa ");
         }
-      )
+      );
+      e.target.classList.remove("btn-danger");
+      e.target.classList.add("btn-primary") ;
+      e.target.innerText = "Follow"
     }
     
   }

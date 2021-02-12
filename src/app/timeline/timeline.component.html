@@ -1,140 +1,85 @@
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-success rounded shadow" *ngFor="let item of blogs">
-            <ul class="timeline" >
-                <li>
-                    <div class="timeline-body">
-                        <div class="user">
-                            <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                alt=""></span>
-                        <span class="username"><a href="javascript:;">{{item.author.username}}</a>
-                            <small></small></span>
-                            <!-- <span class="pull-right text-muted mr-2"><a><i class="glyphicon glyphicon-remove"></i></a></span> -->
+<!--  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ -->
+ <div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs">
+                <!-- begin timeline -->
+                <ul class="timeline">
+                    <li>
+                        <!-- begin timeline-time -->
+                        <div class="timeline-time">
+                            <span class="date">{{item.creartedate| date : 'EEEE dd,MMM/yyyy' }}</span>
+                            <span class="time">{{item.creartedate| date : 'h:mm a' }}</span>
                         </div>
-                        <div class="timeline-content">
-                            <p class="h3">
-                                {{item.title}}
-                            </p>
-                            <p>
-                                {{item.body}}
-                            </p>
-                            <p><img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt=""></p>
+                        <!-- end timeline-time -->
+                        <!-- begin timeline-icon -->
+                        <div class="timeline-icon">
+                            <a href="javascript:;">&nbsp;</a>
                         </div>
-                        <div class="timeline-likes">
-                            <div class="stats-right">
-                                
-                                <span class="stats-text">21 Comments</span>
+                        <!-- end timeline-icon -->
+                        <!-- begin timeline-body -->
+                        <div class="timeline-body">
+                            <div class="timeline-header">
+                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                        alt=""></span>
+                                <span class="username"><a href="javascript:;">{{item.author.username}}</a> <small></small></span>
+                                <!-- <span class="pull-right text-muted">18 Views</span> -->
                             </div>
-                            <div class="stats">
-                                <span class="fa-stack fa-fw stats-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                    <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                                </span>
-                                <span class="fa-stack fa-fw stats-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                </span>
-                                <!-- <span class="stats-total">4.3k</span> -->
+                            <div class="timeline-content">
+                                <p class="h3">
+                                    {{item.title}}
+                                </p>
+                                <p>
+                                    {{item.body}}
+                                </p>
                             </div>
-                        </div>
-                        <div class="timeline-footer">
-                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                           <!--  <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a -->>
-                        </div>
-                        <div class="timeline-comment-box">
-                            <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
-                            <div class="input">
-                                <form action="">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control rounded-corner"
-                                            placeholder="Write a comment...">
-                                        <span class="input-group-btn p-l-10">
-                                            <button class="btn btn-primary f-s-12 rounded-corner"
-                                                type="button">Comment</button>
-                                        </span>
-                                    </div>
-                                </form>
+                            <div class="timeline-likes">
+                                <div class="stats-right">
+                                    <span class="stats-text">259 Shares</span>
+                                    <span class="stats-text">21 Comments</span>
+                                </div>
+                                <div class="stats">
+                                    <span class="fa-stack fa-fw stats-icon">
+                                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                        <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
+                                    </span>
+                                    <span class="fa-stack fa-fw stats-icon">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="stats-total">4.3k</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- end timeline-body -->
-                </li>
-            </ul>
+                            <div class="timeline-footer">
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                        class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                        class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                        class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                            </div>
+                            <div class="timeline-comment-box">
+                                <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
+                                <div class="input">
+                                    <form action="">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control rounded-corner"
+                                                placeholder="Write a comment...">
+                                            <span class="input-group-btn p-l-10">
+                                                <button class="btn btn-primary f-s-12 rounded-corner"
+                                                    type="button">Comment</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>  <!-- end timeline-body -->
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div> <!-- end timeline-body -->
+    </div>
 </div>
-
-<!-- <div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-success rounded shadow" *ngFor="let item of blogs">
-            <ul class="timeline" >
-                <li>
-                    <div class="timeline-body " >
-                        <div class="timeline-header">
-                            <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                    alt=""></span>
-                            <span class="username"><a href="javascript:;">{{item.author.username}}</a>
-                                <small></small></span>
-                        </div>
-                        <div class="timeline-content">
-                            <p class="h3">
-                                {{item.title}}
-                            </p>
-                            <p>
-                                {{item.body}}
-                            </p>
-                            <p><img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt="">{{item.body}}</p>
-                        </div>
-                        <div class="timeline-likes">
-                            
-                            <div class="stats">
-                                <span class="fa-stack fa-fw stats-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                    <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                                </span>
-                                <span class="fa-stack fa-fw stats-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                </span>
-                                <span class="stats-total">4.3k</span>
-                            </div>
-                        </div>
-                        <div class="timeline-footer">
-                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                    class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-                        </div>
-                        <div class="timeline-comment-box">
-                            <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
-                            <div class="input">
-                                <form action="">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control rounded-corner"
-                                            placeholder="Write a comment...">
-                                        <span class="input-group-btn p-l-10">
-                                            <button class="btn btn-primary f-s-12 rounded-corner"
-                                                type="button">Comment</button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </li>
-             </ul>
-        </div>
-    </div> 
- </div>-->
-
-
-
-
