@@ -12,12 +12,9 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { AuthorBlogsComponent } from './author-blogs/author-blogs.component';
 import { FollowingsComponent } from './followings/followings.component';
 import { EditUserComponent } from './edit-user/edit-user.component'
-import { from } from 'rxjs';
-<<<<<<< Updated upstream
+// import { from } from 'rxjs';
 import { SearchComponent } from './search/search.component';
-=======
 import { BloggersComponent } from './bloggers/bloggers.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -31,8 +28,8 @@ const routes: Routes = [
     {path:'search',component:SearchComponent},
   ]},
   {path:'editBlog',component:EditBlogComponent},
-  {path:'bloggers',component:BloggersComponent},
   {path:'about',component:AboutComponent},
+  {path:'bloggers',component:BloggersComponent},
   {path:"",component:HomeComponent},
   {path:"*",component:NotFoundComponent},
   {path:'editUser',component:EditUserComponent}
