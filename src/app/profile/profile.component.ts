@@ -12,22 +12,25 @@ import { BlogsService } from '../_service/blogs.service';
 export class ProfileComponent implements OnInit {
   blogs:Blogs[];
   search:string;
-  username: any;
+  owner: any;
   selectedFile: File;
   addForm: FormGroup;
   newblog= new FormData();
   blog:Blogs=new Blogs("","","",[],{});
   constructor(public blogsservice: BlogsService, public router: Router, private fb: FormBuilder) {
-    this.username = blogsservice.loginUser.username;
+    this.owner = blogsservice.loginUser;
+
     this.addForm = this.fb.group({
       title: [''],
       body: [''],
     });
+   
   }
 
 
   ngOnInit(): void {
-
+    
+   
   }
   onFileSelect(event) {
     this.selectedFile = <File>event.target.files[0];
@@ -37,7 +40,7 @@ export class ProfileComponent implements OnInit {
   logout() {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
-    //location.reload();
+   
   }
   post(e) {
     this.newblog.append('title',this.blog.title);

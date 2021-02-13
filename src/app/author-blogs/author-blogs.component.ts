@@ -34,6 +34,7 @@ export class AuthorBlogsComponent implements OnInit {
       d=>
       {
         this.route.navigateByUrl('/profile/autherblogs');
+        location.reload();
       }
     )
     }
