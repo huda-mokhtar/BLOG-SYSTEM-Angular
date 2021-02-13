@@ -21,6 +21,9 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
+  showComments(i){
+    
+  }
 
 
 }

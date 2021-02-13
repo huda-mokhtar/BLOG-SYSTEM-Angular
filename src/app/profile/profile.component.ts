@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   blog:Blogs=new Blogs("","","",[],{});
   constructor(public blogsservice: BlogsService, public router: Router, private fb: FormBuilder) {
     this.owner = blogsservice.loginUser;
-
+    console.log(this.owner);
     this.addForm = this.fb.group({
       title: [''],
       body: [''],
@@ -48,6 +48,7 @@ export class ProfileComponent implements OnInit {
     this.blogsservice.createBlog(this.newblog).subscribe(a=>{
     console.log(a);
     this.router.navigate(['/profile/autherblogs']);
+    location.reload();
     })
   }
   onKey(){

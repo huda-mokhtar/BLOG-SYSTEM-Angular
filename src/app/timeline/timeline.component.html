@@ -1,7 +1,7 @@
  <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs">
+            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs ; let i=index ">
                 <!-- begin timeline -->
                 <ul class="timeline">
                     <li>
@@ -39,14 +39,26 @@
                             <div class="timeline-likes">
                                 
                                 <div class="timeline-footer">
-                                    <div class="stats-right">
-                                        <span class="stats-text">{{item.tags[0]}}</span>
-                                        <span class="stats-text">{{item.tags[1]}}</span>
-                                        <span class="stats-text">{{item.tags[2]}}</span>
+                                    <div class="stats-right" *ngFor="let tags of item.tags">
+                                        <span class="stats-text" style="margin-left:6px">{{ tags }}</span>
                                     </div>
-                                    <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                    <a href="" class="m-r-15 text-inverse-lighter"><i
                                         class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
                                 </div>
+                            </div>
+                            <div class="post-comments">
+                                <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"></a></i></p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Etiam a sapien odio, sit amet
+                                </p>
+                            </div>
+                            <div class="post-comments">
+                                <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"></a></i></p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Etiam a sapien odio, sit amet
+                                </p>
                             </div>
                             
                             <div class="timeline-comment-box">
