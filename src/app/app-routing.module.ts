@@ -25,11 +25,11 @@ const routes: Routes = [
     {path:'timeline',component:TimelineComponent},
     {path:'followings',component:FollowingsComponent},
     {path:'followers',component:FollowersComponent},
-    {path:'search',component:SearchComponent},
+    {path:'search/:search',component:SearchComponent},
   ]},
   {path:'editBlog',component:EditBlogComponent},
   {path:'about',component:AboutComponent},
-  {path:'bloggers',component:BloggersComponent},
+  {path:'bloggers/:item',component:BloggersComponent},
   {path:"",component:HomeComponent},
   {path:"*",component:NotFoundComponent},
   {path:'editUser',component:EditUserComponent}

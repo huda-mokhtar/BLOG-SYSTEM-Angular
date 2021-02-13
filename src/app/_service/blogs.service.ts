@@ -10,7 +10,7 @@ export class BlogsService {
   loginUser:any;
 
   constructor(public http:HttpClient){
-   this.loginUser=JSON.parse(localStorage.getItem('user'));
+    this.loginUser=JSON.parse(localStorage.getItem('user'));
   }
   getAll(){
     return this.http.get<Blogs[]>("http://localhost:3000/blogs");

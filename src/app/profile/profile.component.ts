@@ -48,11 +48,13 @@ export class ProfileComponent implements OnInit {
     })
   }
   onKey(){
-    console.log("-------",this.search);
-    this.blogsservice.searchTageTitle(this.search).subscribe(a=>{
-      this.blogs=a;
-      console.log(a);
-    })
-    this.router.navigate(['/profile/search']);
+    
+    // console.log("-------",this.search);
+    // this.blogsservice.searchTageTitle(this.search).subscribe(a=>{
+    //   this.blogs=a;
+    //   console.log(a);
+    // })
+    "['/bloggers/',item.author.username]"
+    this.router.navigate(['/profile/search',this.search]);
   }
 }

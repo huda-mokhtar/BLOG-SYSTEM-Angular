@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Blogs } from '../models/blogs';
 import { BlogsService } from '../_service/blogs.service';
 
@@ -9,7 +9,9 @@ import { BlogsService } from '../_service/blogs.service';
 })
 export class TimelineComponent implements OnInit {
   blogs:Blogs[];
-  bloger_blogs:Blogs[];
+  blogerBlogs:Blogs[];
+  username: string;
+  
   constructor(public blogsservice:BlogsService) {
    }
 
@@ -19,12 +21,6 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
-  getProfile(user:string ){
-    this.blogsservice.searchByAuthor(user).subscribe(a=>{
-      this.bloger_blogs=a;
-      console.log("bloger_blogs",a);
-    })
-  
-  }
+
 
 }
