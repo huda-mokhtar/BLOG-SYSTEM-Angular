@@ -22,6 +22,9 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
+  showComments(i){
+    
+  }
 
   addComment(index){
     this.blogsservice.postComment(index,this.comment).subscribe(a=>{
