@@ -16,15 +16,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login(e:any){
-    console.log(e.target);
+  login(){
+    //console.log(e.target);
     this.userService.login(this.loggedUser).subscribe(
       a => {
         this.loggedUser = a ;
         localStorage.setItem('user',JSON.stringify(a));
-        //  this.router.navigate(["/profile/timeline"]); 
+        this.router.navigate(["/profile/timeline"]); 
         /* e.target.setAttribute("href", "http://localhost:3000/blogs/myprofile"); */
-         e.target.setAttribute("href", "/profile/timeline");
+        // e.target.setAttribute("href", "/profile/timeline");
       },
       err => {console.log(err); }
     );

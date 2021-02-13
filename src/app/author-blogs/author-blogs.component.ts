@@ -51,7 +51,7 @@ export class AuthorBlogsComponent implements OnInit {
     }) 
   }
   delete(id:any){
-    if(window.confirm('Are sure you want to delete this item ?')){
+    if(window.confirm('Are sure you want to delete this blog ?')){
     this.blogsservice.deleteBlog(id).subscribe(
       d=>
       {
