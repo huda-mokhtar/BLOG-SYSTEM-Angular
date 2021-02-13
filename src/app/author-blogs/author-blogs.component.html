@@ -1,103 +1,102 @@
-
-   <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-success rounded shadow" *ngFor="let item of blogs">
-                <ul class="timeline" >
-                    <li>
-                        <div class="timeline-body">
-                            <div>
-                               <!--  <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-success rounded shadow" *ngFor="let item of blogs ;let i = index ; ">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-body">
+                        <div>
+                            <!--  <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                         alt=""></span>
                                 <span class="username"><a href="javascript:;">{{item.author.username}}</a>
                                     <small></small></span> -->
+
+
+                            <span class="pull-right text-muted"></span>
+
+                            <span class="pull-right text-muted">
+                                <a style="cursor: pointer;" data-toggle="modal" data-target="#largeShoes" (click)= "editBlog(i)"> 
+                                    <i class="fa fa-cog w3-xlarge"></i></a>
                                 
-
-                                <span class="pull-right text-muted"></span>
-                               
-                                <span class="pull-right text-muted" >
-                                    <button class="btn btn-secondary" (click)="openVerticallyCentered(content)">edit</button>
-                                    <!--<a style="cursor: pointer;" data-toggle="modal" data-target="#myModal"> <i class="fa fa-cog w3-xlarge" ></i></a> -->
-                                
-                                    <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
-   
-                                    <ng-template #mymodal let-modal>
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
-                                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                                        <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        This is example from ItSolutionStuff.com
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-                                    </div>
-                                    </ng-template>
-
-
-
-
-
-
-
-                                <a style="pointer-events: all;" ><i class="fa fa-trash w3-xlarge" (click)="delete(item._id)" style="cursor: pointer;color:red"></i></a>
-                            </span>
-                                <!-- <span class="pull-right text-muted mr-2"><a><i class="glyphicon glyphicon-remove"></i></a></span> -->
-                            </div>
-                            <div class="timeline-content">
-                                <p class="h3">
-                                    {{item.title}}
-                                </p>
-                                <p>
-                                    {{item.body}}
-                                </p>
-                                <p><img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt=""></p>
-                            </div>
-                            <div class="timeline-likes">
-                                <div class="stats-right">
-                                    <span class="stats-text">259 Shares</span>
-                                    <span class="stats-text">21 Comments</span>
-                                </div>
-                                <div class="stats">
-                                    <span class="fa-stack fa-fw stats-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                        <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                                    </span>
-                                    <span class="fa-stack fa-fw stats-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="stats-total">4.3k</span>
-                                </div>
-                            </div>
-                            <div class="timeline-footer">
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-                            </div>
-                            <div class="timeline-comment-box">
-                                <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
-                                <div class="input">
-                                    <form action="">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control rounded-corner"
-                                                placeholder="Write a comment...">
-                                            <span class="input-group-btn p-l-10">
-                                                <button class="btn btn-primary f-s-12 rounded-corner"
-                                                    type="button">Comment</button>
-                                            </span>
+                                <div class="modal" id="largeShoes" tabindex="-1" role="dialog"
+                                    aria-labelledby="modalLabelLarge" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="modal-title" id="largeShoesLabel">Edit Blog</h2>
+                                                <h5 class="modal-title" id="largeShoesLabel">{{editedBlog.creartedate| date : 'EE dd,MMM/yyyy'}}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form>
+                                                  <div class="form-group">
+                                                    <label  class="col-form-label">Title:</label>
+                                                    <input type="text" class="form-control" [(ngModel)]="editedBlog.title" [ngModelOptions]="{standalone: true}" >
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label  class="col-form-label">Content:</label>
+                                                    <input type="text" class="form-control"  [(ngModel)]="editedBlog.body" [ngModelOptions]="{standalone: true}">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label  class="col-form-label">Tags:</label>
+                                                    <input type="text" class="form-control"  [(ngModel)]="editedBlog.tags" [ngModelOptions]="{standalone: true}">
+                                                  </div>
+                                                </form>
+                                              </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" (click)="saveEditing($event)" data-dismiss="modal">Save changes</button>
+                                          </div>
                                         </div>
-                                    </form>
+                                      </div>
                                 </div>
+
+                                <a style="pointer-events: all;"><i class="fa fa-trash w3-xlarge"
+                                        (click)="delete(item._id)" style="cursor: pointer;color:red"></i></a>
+                            </span>
+                            <!-- <span class="pull-right text-muted mr-2"><a><i class="glyphicon glyphicon-remove"></i></a></span> -->
+                        </div>
+                        <div class="timeline-content">
+                            <p class="h3">
+                                {{item.title}}
+                            </p>
+                            <p>
+                                {{item.body}}
+                            </p>
+                            <p><img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}"
+                                    alt=""></p>
+                        </div>
+                        <div class="timeline-likes">
+                                
+                            <div class="timeline-footer" >
+                                <div class="stats-right" *ngFor="let tags of item.tags">
+                                    <span class="stats-text"style="margin-left:6px" >{{ tags }}</span>
+                                    
+                                </div>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                    class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
                             </div>
                         </div>
-                        <!-- end timeline-body -->
-                    </li>
-                </ul>
-            </div>
-        </div> <!-- end timeline-body -->
-    </div>
+                        <div class="timeline-comment-box">
+                            <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
+                            <div class="input">
+                                <form action="">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-corner"
+                                            placeholder="Write a comment...">
+                                        <span class="input-group-btn p-l-10">
+                                            <button class="btn btn-primary f-s-12 rounded-corner"
+                                                type="button">Comment</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end timeline-body -->
+                </li>
+            </ul>
+        </div>
+    </div> <!-- end timeline-body -->
+</div>

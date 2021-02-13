@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
   logout() {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
-    location.reload();
+    //location.reload();
   }
   post(e) {
     this.newblog.append('title',this.blog.title);

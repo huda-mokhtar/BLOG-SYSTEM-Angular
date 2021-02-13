@@ -4,6 +4,7 @@ import { BlogsService } from '../_service/blogs.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap'
 import { from } from 'rxjs';
+import { EditBlogComponent } from '../edit-blog/edit-blog.component';
 
 @Component({
   selector: 'app-author-blogs',
@@ -13,32 +14,9 @@ import { from } from 'rxjs';
 export class AuthorBlogsComponent implements OnInit {
   blogs:Blogs[];
   deletedBlog :Blogs;
-  
+  editedBlog :Blogs = new Blogs("","","",[],{});
 
-  title = 'appBootstrap';
-  
-  closeResult: string;
   constructor(public blogsservice:BlogsService ,  public ar:ActivatedRoute, public route:Router , private modalService: NgbModal) { }
-
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
-
-
 
   ngOnInit(): void {
      this.blogsservice.profile().subscribe(a=>{
@@ -60,4 +38,21 @@ export class AuthorBlogsComponent implements OnInit {
     )
     }
   }
+
+  editBlog(index){
+    this.editedBlog = this.blogs[index];
+    console.log(this.editedBlog);
+  }
+  saveEditing(){
+    this.blogsservice.updateBlog(this.editedBlog._id,this.editedBlog).subscribe(
+      d =>{
+        console.log(this.editedBlog);
+        this.route.navigateByUrl('/profile/autherblogs') ;
+       
+      }     
+
+    )
+  }
+  
 }
+

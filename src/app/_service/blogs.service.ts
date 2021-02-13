@@ -22,8 +22,8 @@ export class BlogsService {
    deleteBlog(id:any){
      return this.http.delete<Blogs>('http://localhost:3000/blogs/'+id ,{ headers: { authorization: this.loginUser.token } });
    }
-   updateBlog(blog:Blogs){
-     return this.http.patch<Blogs>('http://localhost:3000/blogs/'+this.loginUser._id,blog,{ headers: { authorization: this.loginUser.token } });
+   updateBlog(BlogId:any,blog:Blogs){
+     return this.http.patch<Blogs>('http://localhost:3000/blogs/'+BlogId,blog,{ headers: { authorization: this.loginUser.token } });
    }
    followingsBlogs() {
     return this.http.get<Blogs[]>('http://localhost:3000/blogs/followings',{ headers: { authorization: this.loginUser.token } });

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../_service/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { getJSDocClassTag } from 'typescript';
 
 @Component({
   selector: 'app-followers',
@@ -25,6 +26,7 @@ export class FollowersComponent implements OnInit {
     }) ;
     this.userservice.Followings().subscribe(a=>{
       this.followingsArr=a;
+
     })
   }
   onClick(e:any,id:any){
@@ -50,11 +52,15 @@ export class FollowersComponent implements OnInit {
       e.target.classList.add("btn-primary") ;
       e.target.innerText = "Follow"
     }
+     
+    
+    
     
   }
 
-  
+  check(item : User){
+    return !(this.followingsArr.some(user=>user.username === item.username))
 
-
+  }
 
 }
