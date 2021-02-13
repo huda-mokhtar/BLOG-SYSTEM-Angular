@@ -57,7 +57,8 @@ export class ProfileComponent implements OnInit {
     //   this.blogs=a;
     //   console.log(a);
     // })
-    "['/bloggers/',item.author.username]"
+    // "['/bloggers/',item.author.username]"
     this.router.navigate(['/profile/search',this.search]);
+    
   }
 }

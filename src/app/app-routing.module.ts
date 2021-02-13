@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
     {path:'followers',component:FollowersComponent},
     {path:'search/:search',component:SearchComponent},
   ]},
-  {path:'editBlog',component:EditBlogComponent},
   {path:'about',component:AboutComponent},
   {path:'bloggers/:item',component:BloggersComponent},
   {path:"",component:HomeComponent},

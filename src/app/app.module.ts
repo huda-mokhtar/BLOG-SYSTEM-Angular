@@ -11,7 +11,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
-import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { FollowersComponent } from './followers/followers.component';
@@ -31,7 +30,6 @@ import { BloggersComponent } from './bloggers/bloggers.component';
     HomeComponent,
     HeaderComponent,
     ProfileComponent,
-    EditBlogComponent,
     NotFoundComponent,
     AboutComponent,
     FollowersComponent,

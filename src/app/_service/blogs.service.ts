@@ -37,6 +37,9 @@ export class BlogsService {
   searchByAuthor(username:string) {
     return this.http.get<Blogs[]>('http://localhost:3000/blogs/author/'+username,{ headers: { authorization: this.loginUser.token } });
   }
+  postComment(BlogId:any,comment:any){
+    return this.http.post<any>("http://localhost:3000/blogs/comments/"+BlogId,comment,{ headers: { authorization: this.loginUser.token } });
+   }
 
 
 }

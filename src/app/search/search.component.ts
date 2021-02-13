@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
       this.blogs=a;
       console.log(this.search,this.blogs);
     })
-   
+
 }
 
 

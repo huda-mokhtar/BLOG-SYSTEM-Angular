@@ -3,8 +3,7 @@ import { Blogs } from '../models/blogs';
 import { BlogsService } from '../_service/blogs.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap'
-import { from } from 'rxjs';
-import { EditBlogComponent } from '../edit-blog/edit-blog.component';
+
 
 @Component({
   selector: 'app-author-blogs',

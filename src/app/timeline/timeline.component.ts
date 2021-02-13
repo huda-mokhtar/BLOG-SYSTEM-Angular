@@ -11,6 +11,7 @@ export class TimelineComponent implements OnInit {
   blogs:Blogs[];
   blogerBlogs:Blogs[];
   username: string;
+  comment: any;
   
   constructor(public blogsservice:BlogsService) {
    }
@@ -21,6 +22,14 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
+
+  addComment(index){
+    this.blogsservice.postComment(index,this.comment).subscribe(a=>{
+      this.blogs=a;
+      console.log(a);
+    })
+  }
+
 
 
 }
