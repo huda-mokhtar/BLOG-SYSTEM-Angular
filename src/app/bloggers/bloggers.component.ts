@@ -11,13 +11,13 @@ import { BlogsService } from '../_service/blogs.service';
 
 export class BloggersComponent implements OnInit {
   @Input()user:string;
+  name:string;
   blogerBlogs:  Blogs[];
   constructor(public blogsservice:BlogsService,public ar:ActivatedRoute) { }
 
   ngOnInit(): void {
-    let name:string;
-    this.ar.params.subscribe(a=>name=a['item'])
-    this.blogsservice.searchByAuthor(name).subscribe(a=>{
+    this.ar.params.subscribe(a=>this.name=a['item']);
+    this.blogsservice.searchByAuthor(this.name).subscribe(a=>{
       this.blogerBlogs=a;
       console.log("bloger",a);
   })

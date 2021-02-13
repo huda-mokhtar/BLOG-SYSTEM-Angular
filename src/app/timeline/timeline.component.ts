@@ -11,7 +11,6 @@ export class TimelineComponent implements OnInit {
   blogs:Blogs[];
   blogerBlogs:Blogs[];
   username: string;
-  // @Output() blogevents: EventEmitter<Blogs[]> = new EventEmitter<Blogs[]>();
   
   constructor(public blogsservice:BlogsService) {
    }
@@ -22,15 +21,6 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
-  getProfile(user:string ){
-    // console.log("aaaaaaaaaaaaaaaaaa");
-    // this.blogsservice.searchByAuthor(user).subscribe(a=>{
-    //   this.blogerBlogs=a;
-    //   console.log("bloger_blogs",this.blogerBlogs);
-      // this.blogevents.emit(a);
-    // })
-    // this.username=user;
-  
-  }
+
 
 }

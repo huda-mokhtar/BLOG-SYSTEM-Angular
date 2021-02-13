@@ -1,4 +1,3 @@
-<!-- <app-timeline (blogevents)="show($event)" ></app-timeline> -->
 <div class="container">
    <div class="row">
       <div class="col-md-12">
@@ -18,7 +17,7 @@
                      <!-- END profile-header-img -->
                      <!-- BEGIN profile-header-info -->
                      <div class="profile-header-info">
-                        <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
+                        <h4 class="m-t-10 m-b-5">{{name}}</h4>
                         <p class="m-b-10">UXUI + Frontend Developer</p>
                         
                      </div>
@@ -38,7 +37,7 @@
             </div>
             <!-- end profile -->
             <!-- begin profile-content -->
-            <div class="profile-content">
+            <div class="profile-content" *ngFor="let item of blogerBlogs">
                <!-- begin tab-content -->
                <div class="tab-content p-0">
                   <!-- begin #profile-post tab -->
@@ -47,9 +46,9 @@
                      <ul class="timeline">
                         <li>
                            <!-- begin timeline-time -->
-                           <div class="timeline-time">
-                              <span class="date">today</span>
-                              <span class="time">04:20</span>
+                           <div class="timeline-time" >
+                              <span class="date">{{item.creartedate| date : 'EEEE dd,MMM/yyyy' }}</span>
+                            <span class="time">{{item.creartedate| date : 'h:mm a' }}</span>
                            </div>
                            <!-- end timeline-time -->
                            <!-- begin timeline-icon -->
@@ -59,16 +58,22 @@
                            <!-- end timeline-icon -->
                            <!-- begin timeline-body -->
                            <div class="timeline-body">
-                              <div class="timeline-header">
+                              <!-- <div class="timeline-header">
                                  <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
                                  <span class="username"><a href="javascript:;">Sean Ngu</a> <small></small></span>
                                  <span class="pull-right text-muted">18 Views</span>
-                              </div>
-                              <div class="timeline-content">
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus turpis quis tincidunt luctus.
-                                    Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
+                              </div> -->
+                              <div class="timeline-content" >
+                                 <p class="h3">
+                                    {{item.title}}
+                                </p>
+                                <p>
+                                    {{item.body}}
+                                </p>
+                                <p>
+                                   <img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt="">
                                  </p>
+                                
                               </div>
                               <div class="timeline-likes">
                                  <div class="stats-right">
