@@ -1,5 +1,6 @@
 <!--  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
  -->
+ <app-bloggers [user]="username" style="display:none;"></app-bloggers>
  <div class="container">
     <div class="row">
         <div class="col-md-9">
@@ -23,8 +24,8 @@
                             <div class="timeline-header">
                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                         alt=""></span>
-                                        
-                                <span class="username"><a (click)="getProfile(item.author.username)" href="/bloggers">{{item.author.username}}</a> <small></small></span>
+
+                                <span class="username"><a (click)="getProfile(item.author.username)" [routerLink]="['/bloggers/',item.author.username]">{{item.author.username}}</a> <small></small></span>
                                 <!-- <span class="pull-right text-muted">18 Views</span> -->
                             </div>
                             <div class="timeline-content">
