@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Blogs } from '../models/blogs';
 import { BlogsService } from '../_service/blogs.service';
 
@@ -10,10 +11,12 @@ import { BlogsService } from '../_service/blogs.service';
 export class TimelineComponent implements OnInit {
   blogs:Blogs[];
   blogerBlogs:Blogs[];
-  username: string;
-  comment: any;
+ 
+  comment: string;
+  addForm: FormGroup;
   
-  constructor(public blogsservice:BlogsService) {
+  constructor(public blogsservice:BlogsService, private fb: FormBuilder) {
+   
    }
 
   ngOnInit(): void {
@@ -22,15 +25,17 @@ export class TimelineComponent implements OnInit {
       console.log(a);
     })
   }
-  showComments(i){
-    
-  }
+  
 
   addComment(index){
-    this.blogsservice.postComment(index,this.comment).subscribe(a=>{
-      this.blogs=a;
+    this.addForm = this.fb.group({
+      body: [this.comment],
+    });
+  
+    this.blogsservice.postComment(index,this.addForm.value).subscribe(a=>{
       console.log(a);
-    })
+    });
+    location.reload();
   }
 
 

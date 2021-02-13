@@ -46,34 +46,27 @@
                                         class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
                                 </div>
                             </div>
-                            <div class="post-comments">
-                                <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"></a></i></p>
+                            <div class="post-comments" *ngFor="let n of item.comments" >
+                                <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a> says : <i class="pull-right"><a href="#"></a></i></p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Etiam a sapien odio, sit amet
+                                   {{n.body}}
                                 </p>
                             </div>
-                            <div class="post-comments">
-                                <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"></a></i></p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Etiam a sapien odio, sit amet
-                                </p>
-                            </div>
+                
                             
                             <div class="timeline-comment-box">
                                 <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
                                 <div class="input">
-                                    <form action="">
+                                    <!-- <form action=""> -->
                                         <div class="input-group">
-                                            <input type="text" class="form-control rounded-corner"
+                                            <input type="text" [(ngModel)]="comment" class="form-control rounded-corner"
                                                 placeholder="Write a comment...">
                                             <span class="input-group-btn p-l-10">
                                                 <button class="btn btn-primary f-s-12 rounded-corner"
-                                                    type="button">Comment</button>
+                                                    type="button" (click)="addComment(item._id)">Comment</button>
                                             </span>
                                         </div>
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
 
                             </div>
