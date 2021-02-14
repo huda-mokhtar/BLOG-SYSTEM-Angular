@@ -20,7 +20,7 @@ export class EditUserComponent implements OnInit {
         d =>{
           console.log(this.user);
           this.r.navigateByUrl('/profile/timeline') ;
-          location.reload();
+        
         }      
     )
   }

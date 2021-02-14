@@ -50,14 +50,15 @@
                                             class="fa fa-comments fa-fw fa-lg m-r-3"></i>Show All Comments..</a>
                                 </div>
                             </div>
-                            <div class="post-comments" *ngFor="let n of item.comments" style="display: none;">
-                                <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a>
-                                    says : <i class="pull-right"><a href="#"></a></i></p>
+                            <div style="display: none;">
+                                <div class="post-comments" *ngFor="let n of item.comments">
+                                    <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a>
+                                        says : <i class="pull-right"><a href="#"></a></i></p>
                                     <h4 style="margin-left: 5px;">
                                         {{n.body}}
                                     </h4>
-                            </div>
-                            <div class="timeline-comment-box">
+                                </div>
+                            </div>         <div class="timeline-comment-box">
                                 <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
                                 <div class="input">
                                     <!-- <form action=""> -->

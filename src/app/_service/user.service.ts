@@ -29,6 +29,7 @@ export class UserService {
     return this.http.get<User[]>('http://localhost:3000/users/followings/' + this.loginUser._id,{ headers: { authorization: this.loginUser.token } } );
   }
   update(user:User){
+  
     return this.http.patch<User>('http://localhost:3000/users',user,{ headers: { authorization: this.loginUser.token } });
   }
 }
