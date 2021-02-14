@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Blogs } from '../models/blogs';
 import { BlogsService } from '../_service/blogs.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap'
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -15,16 +16,18 @@ export class AuthorBlogsComponent implements OnInit {
   deletedBlog :Blogs;
   editedBlog :Blogs = new Blogs("","","",[],{});
 
-  constructor(public blogsservice:BlogsService ,  public ar:ActivatedRoute, public route:Router , private modalService: NgbModal) { }
+  comment: string;
+  addForm: FormGroup;
+  show:any;
+  status:any;
+  flag:boolean = false;
+
+  constructor(public blogsservice:BlogsService ,  public ar:ActivatedRoute, public route:Router , private modalService: NgbModal, private fb: FormBuilder) { }
 
   ngOnInit(): void {
      this.blogsservice.profile().subscribe(a=>{
       this.blogs=a;
       console.log(a);
-    /* this.ar.params.subscribe(a=> {
-      this.id=a['_id'];
-      console.log(this.id);
-    }) */
     }) 
   }
   delete(id:any){
@@ -52,6 +55,32 @@ export class AuthorBlogsComponent implements OnInit {
       }     
 
     )
+  }
+
+  showComments(e:any){
+    console.log(e.target.parentNode.parentNode.nextSibling);
+    this.show=e.target.parentNode.parentNode.nextSibling;
+    this.status=e.target;
+    this.flag = !this.flag
+    if(this.flag){
+      this.show.style.display = "block";
+      this.status.innerText= "Hide Comments"
+    }else{
+      this.show.style.display = "none";
+      this.status.innerText= "Show All Comments.."
+    }
+    
+  }
+  
+  addComment(index){
+    this.addForm = this.fb.group({
+      body: [this.comment],
+    });
+  
+    this.blogsservice.postComment(index,this.addForm.value).subscribe(a=>{
+      console.log(a);
+    });
+    location.reload();
   }
   
 }

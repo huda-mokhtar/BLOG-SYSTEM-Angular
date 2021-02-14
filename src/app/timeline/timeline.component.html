@@ -1,7 +1,8 @@
- <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs; let i = index ;">
+            <div class="panel panel-success rounded shadow" id="profile-post"
+                *ngFor="let item of blogs; let i = index ;">
                 <!-- begin timeline -->
                 <ul class="timeline">
                     <li>
@@ -22,7 +23,9 @@
                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                                         alt=""></span>
 
-                                <span class="username"><a  [routerLink]="['/bloggers/',item.author.username]">{{item.author.username}}</a> <small></small></span>
+                                <span class="username"><a
+                                        [routerLink]="['/bloggers/',item.author.username]">{{item.author.username}}</a>
+                                    <small></small></span>
                                 <!-- <span class="pull-right text-muted">18 Views</span> -->
                             </div>
                             <div class="timeline-content">
@@ -33,44 +36,44 @@
                                     {{item.body}}
                                 </p>
                                 <p>
-                                    <img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt="">
-                                  </p>
+                                    <img class="img-responsive pull-right"
+                                        src="{{'http://localhost:3000//'+item.photo}}" alt="">
+                                </p>
                             </div>
                             <div class="timeline-likes">
-                                
                                 <div class="timeline-footer">
                                     <div class="stats-right" *ngFor="let tags of item.tags">
                                         <span class="stats-text" style="margin-left:6px">{{ tags }}</span>
                                     </div>
-                                    <a href="" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                    <a class="m-r-15 text-inverse-lighter" style="cursor: pointer;"
+                                        (click)="showComments($event)"><i
+                                            class="fa fa-comments fa-fw fa-lg m-r-3"></i>Show All Comments..</a>
                                 </div>
                             </div>
-                            <div class="post-comments" *ngFor="let n of item.comments" >
-                                <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a> says : <i class="pull-right"><a href="#"></a></i></p>
-                                <p>
-                                   {{n.body}}
-                                </p>
+                            <div class="post-comments" *ngFor="let n of item.comments" style="display: none;">
+                                <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a>
+                                    says : <i class="pull-right"><a href="#"></a></i></p>
+                                    <h4 style="margin-left: 5px;">
+                                        {{n.body}}
+                                    </h4>
                             </div>
-                
-                            
                             <div class="timeline-comment-box">
                                 <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
                                 <div class="input">
                                     <!-- <form action=""> -->
-                                        <div class="input-group">
-                                            <input type="text" [(ngModel)]="comment" class="form-control rounded-corner"
-                                                placeholder="Write a comment...">
-                                            <span class="input-group-btn p-l-10">
-                                                <button class="btn btn-primary f-s-12 rounded-corner"
-                                                    type="button" (click)="addComment(item._id)">Comment</button>
-                                            </span>
-                                        </div>
+                                    <div class="input-group">
+                                        <input type="text" [(ngModel)]="comment" class="form-control rounded-corner"
+                                            placeholder="Write a comment...">
+                                        <span class="input-group-btn p-l-10">
+                                            <button class="btn btn-primary f-s-12 rounded-corner" type="button"
+                                                (click)="addComment(item._id)">Comment</button>
+                                        </span>
+                                    </div>
                                     <!-- </form> -->
                                 </div>
 
                             </div>
-                        </div>  <!-- end timeline-body -->
+                        </div> <!-- end timeline-body -->
                     </li>
                 </ul>
             </div>
