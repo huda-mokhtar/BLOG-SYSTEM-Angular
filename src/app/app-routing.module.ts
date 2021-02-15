@@ -24,7 +24,7 @@ const routes: Routes = [
     {path:'timeline',component:TimelineComponent},
     {path:'followings',component:FollowingsComponent},
     {path:'followers',component:FollowersComponent},
-    {path:'search/:search',component:SearchComponent},
+    {path:'search',component:SearchComponent},
   ]},
   {path:'about',component:AboutComponent},
   {path:'bloggers/:item',component:BloggersComponent},

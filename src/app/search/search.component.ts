@@ -9,18 +9,12 @@ import { BlogsService } from '../_service/blogs.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
- blogs:Blogs[];
-  search:string;
-  constructor(public blogsservice:BlogsService,public ar:ActivatedRoute) { 
+ 
+  constructor(public blogsservice:BlogsService) {
+     
   }
 
   ngOnInit(): void {
-    this.ar.params.subscribe(a=>this.search=a['search']);
-    this.blogsservice.searchTageTitle(this.search).subscribe(a=>{
-      this.blogs=a;
-      console.log(this.search,this.blogs);
-    })
-
 }
 
 

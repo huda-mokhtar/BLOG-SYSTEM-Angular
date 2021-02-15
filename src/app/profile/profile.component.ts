@@ -16,11 +16,9 @@ export class ProfileComponent implements OnInit {
   newblog= new FormData();
   blog:Blogs=new Blogs("","","",[],{});
   constructor(public blogsservice: BlogsService, public router: Router) {
-    this.owner = blogsservice.loginUser;
+    this.owner = blogsservice.loginUser();
     console.log(this.owner);
-
   }
-
 
   ngOnInit(): void {
     }
@@ -33,12 +31,11 @@ export class ProfileComponent implements OnInit {
   logout() {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
-   
   }
   post(e) {
     this.newblog.append('title',this.blog.title);
     this.newblog.append('body', this.blog.body);
-    this.newblog.append('tags', this.blog.tags['']);
+    this.newblog.append('tags', this.blog.tags[10]);
     this.blogsservice.createBlog(this.newblog).subscribe(a=>{
     console.log(a);
     this.router.navigate(['/profile/autherblogs']);
@@ -46,6 +43,10 @@ export class ProfileComponent implements OnInit {
     })
   }
   onKey(){
-    this.router.navigate(['/profile/search',this.search]);
+    this.blogsservice.searchTageTitle(this.search).subscribe(a=>{
+      this.blogsservice.searchResult=a;
+      console.log(this.search,a);
+    })
+    this.router.navigate(['/profile/search']);
   }
 }
