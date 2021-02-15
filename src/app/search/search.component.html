@@ -1,7 +1,7 @@
  <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs">
+            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of this.blogsservice.searchResult">
                 <!-- begin timeline -->
                 <ul class="timeline">
                     <li>

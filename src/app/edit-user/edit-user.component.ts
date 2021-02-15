@@ -13,18 +13,24 @@ export class EditUserComponent implements OnInit {
 
   constructor(public userservice:UserService ,  public ar:ActivatedRoute, public r:Router) 
   {
-    this.user = userservice.loginUser;
-  }
-  update(){
-    this.userservice.update(this.user).subscribe(
-        d =>{
-          console.log(this.user);
-          this.r.navigateByUrl('/profile/timeline') ;
-        
-        }      
-    )
+     this.user = userservice.loginUser();
   }
 
+  update(e){
+    this.userservice.update(this.user).subscribe(a=>{
+    console.log("update",this.user);
+    this.login();
+    this.r.navigateByUrl('/profile/timeline') ; 
+    // e.target.setAttribute("href","/profile/timeline");
+    });            
+  }
+login(){
+  this.userservice.login(this.user).subscribe(
+    a => {
+      this.user = a ;
+      localStorage.setItem('user',JSON.stringify(a));
+    });
+}
   ngOnInit(): void {
 
   }

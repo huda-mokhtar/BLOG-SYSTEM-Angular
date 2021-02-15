@@ -15,7 +15,7 @@ export class FollowersComponent implements OnInit {
  followersArr:User[];
  
   constructor(public userservice:UserService) { 
-    this.userid= userservice.loginUser.id;
+    this.userid= userservice.loginUser().id;
   }
 
   public isFollow: boolean = false;

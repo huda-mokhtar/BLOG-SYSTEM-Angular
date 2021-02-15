@@ -14,7 +14,7 @@ export class FollowingsComponent implements OnInit {
  userid:any;
  
   constructor(public userservice:UserService) { 
-    this.userid= userservice.loginUser.id;
+    this.userid= userservice.loginUser()._id;
   }
  public isFollow: boolean = false;
   ngOnInit(): void {
