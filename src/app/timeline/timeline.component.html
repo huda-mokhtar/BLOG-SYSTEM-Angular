@@ -8,8 +8,8 @@
                     <li>
                         <!-- begin timeline-time -->
                         <div class="timeline-time">
-                            <span class="date">{{item.creartedate| date : 'EEEE dd,MMM/yyyy' }}</span>
-                            <span class="time">{{item.creartedate| date : 'h:mm a' }}</span>
+                            <span class="date">{{item.createdAt| date : 'EEEE dd,MMM/yyyy' }}</span>
+                            <span class="time">{{item.createdAt| date : 'h:mm a' }}</span>
                         </div>
                         <!-- end timeline-time -->
                         <!-- begin timeline-icon -->
@@ -52,7 +52,7 @@
                             </div>
                             <div style="display: none;">
                                 <div class="post-comments" *ngFor="let n of item.comments">
-                                    <p class="meta">{{n.creartedate| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a>
+                                    <p class="meta">{{n. createdAt| date : 'h:mm a' }} <a href="#">{{n.authorName}}</a>
                                         says : <i class="pull-right"><a href="#"></a></i></p>
                                     <h4 style="margin-left: 5px;">
                                         {{n.body}}
