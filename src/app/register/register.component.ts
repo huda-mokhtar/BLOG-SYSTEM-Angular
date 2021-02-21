@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   constructor(public userService : UserService , public router : Router) { }
-  newUser: User =new User("","","","","","",0,[],[]);
+  newUser: User =new User("","","","","","","",[],[]);
   ngOnInit(): void {
   }
   registerUser(){

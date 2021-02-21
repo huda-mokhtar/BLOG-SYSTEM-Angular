@@ -51,7 +51,7 @@ export class AuthorBlogsComponent implements OnInit {
       d =>{
         console.log(this.editedBlog);
         this.route.navigateByUrl('/profile/autherblogs') ;
-       
+       location.reload();
       }     
 
     )

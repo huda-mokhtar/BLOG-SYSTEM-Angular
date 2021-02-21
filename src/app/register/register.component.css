@@ -1,5 +1,5 @@
 body{
-  margin-top:20px;
+  margin-top:10px;
   color:#fff;
 }
 
@@ -9,7 +9,7 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
+  overflow:scroll;
   background: #923ce0;
   text-align: center;
   color: #fff;
