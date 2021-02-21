@@ -21,6 +21,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
 import { BloggersComponent } from './bloggers/bloggers.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BloggersComponent } from './bloggers/bloggers.component';
     FollowingsComponent,
     EditUserComponent,
     SearchComponent,
-    BloggersComponent
+    BloggersComponent,
+    SuggestionsComponent
   ],
   imports: [
     BrowserModule,

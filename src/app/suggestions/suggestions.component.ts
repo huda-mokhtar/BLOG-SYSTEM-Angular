@@ -1,34 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../_service/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { getJSDocClassTag } from 'typescript';
 
 @Component({
-  selector: 'app-followers',
-  templateUrl: './followers.component.html',
-  styleUrls: ['./followers.component.css']
+  selector: 'app-suggestions',
+  templateUrl: './suggestions.component.html',
+  styleUrls: ['./suggestions.component.css']
 })
-export class FollowersComponent implements OnInit {
- followingsArr:User[];
- userid:any;
- followersArr:User[];
- 
+export class SuggestionsComponent implements OnInit {
+
+  followingsArr:User[];
+  suggestions:User[]; 
+  userid:any;
   constructor(public userservice:UserService) { 
-    this.userid= userservice.loginUser().id;
+    this.userid= userservice.loginUser()._id;
   }
 
-  public isFollow: boolean = false;
- 
   ngOnInit(): void {
-     this.userservice.Followers().subscribe(a=>{
-      this.followersArr=a;
-    }) ;
     this.userservice.Followings().subscribe(a=>{
-      this.followingsArr=a;
-
+      this.followingsArr = a;
+    });
+    this.userservice.getAll().subscribe(a=>{
+      this.suggestions = a
     })
   }
+  public isFollow: boolean = false;
   onClick(e:any,id:any){
     this.isFollow = !this.isFollow;
     if(this.isFollow){

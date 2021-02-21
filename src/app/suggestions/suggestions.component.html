@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="people-nearby" *ngFor="let item of suggestions">
+              <div class="nearby-user" *ngIf="check(item)">
+                <div class="row"  *ngIf="item._id != userid">
+                  <div class="col-md-2 col-sm-2">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="user" class="profile-photo-lg">
+                  </div>
+                  <div class="col-md-7 col-sm-7">
+                    <h5><a class="profile-link"  [routerLink]="['/bloggers/',item.firstName]">{{item.firstName}}</a></h5>
+                    <p>{{item.job}}</p>
+                    <p class="text-muted">{{item.email}}</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <button class="pull-right btn btn-danger"  id="follow" 
+                    (click)="onClick($event,item._id)">
+                    Follow
+                   </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    	</div>
+	</div>
+</div>

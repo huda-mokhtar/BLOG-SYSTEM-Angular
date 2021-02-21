@@ -14,6 +14,7 @@ import { EditUserComponent } from './edit-user/edit-user.component'
 // import { from } from 'rxjs';
 import { SearchComponent } from './search/search.component';
 import { BloggersComponent } from './bloggers/bloggers.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
     {path:'followings',component:FollowingsComponent},
     {path:'followers',component:FollowersComponent},
     {path:'search',component:SearchComponent},
+    {path:'suggestions',component:SuggestionsComponent},
   ]},
   {path:'about',component:AboutComponent},
   {path:'bloggers/:item',component:BloggersComponent},

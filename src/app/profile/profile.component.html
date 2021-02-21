@@ -1,201 +1,228 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdeys">
-<div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-4">
-        <div class="panel rounded shadow">
-            <div class="panel-body">
-                <div class="inner-all">
-                    <ul class="list-unstyled">
-                        <li class="text-center">
-                            <img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                        </li>
-                        <li class="text-center">
-                            <h3 class="text-capitalize">{{owner.firstName+" "+owner.lastName}}</h3>
-                            <!-- <p class="text-muted text-capitalize">web designer</p> -->
-                        </li>
-                        <li class="text-center">
-                            <h5 class="text-capitalize" style="color: indigo;">{{owner.job}}</h5>
-                        </li>
-                        <li><br></li>
-                        <li>
-                            <div class="btn-group-vertical btn-block">
-                                <input class="form-control input-lg no-border" [(ngModel)]="search"  (keyup.enter)="onKey()" placeholder="Search...">
-                                <a  class="btn btn-default" routerLink="/editUser"><i class="fa fa-cog pull-right"></i>Edit Account</a>
-                                <a class="btn btn-default" (click)="logout()"><i class="fa fa-sign-out pull-right"></i>Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div><!-- /.panel -->
-
-        <div class="panel panel-theme rounded shadow">
-            <div class="panel-heading">
-                <div class="pull-left">
-                    <h3 class="panel-title">Contact</h3>
-                </div>
-                <div class="pull-right">
-                    <a href="https://www.facebook.com" class="btn btn-sm btn-success"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.twitter.com" class="btn btn-sm btn-success"><i class="fa fa-twitter"></i></a>
-                    <a href="https://www.google.com" class="btn btn-sm btn-success"><i class="fa fa-google-plus"></i></a>
-                </div> 
-                <div class="clearfix"></div>
-            </div><!-- /.panel-heading -->
-            <div class="panel-body no-padding rounded">
-                <ul class="list-group no-margin">
-                    <li class="list-group-item"><i class="fa fa-envelope mr-5"></i> {{owner.email}}</li>
-                    <li class="list-group-item"><i class="fa fa-globe mr-5"></i> www.ToDo.com</li>
-                    <li class="list-group-item"><i class="fa fa-phone mr-5"></i> +6281 903 xxx xxx</li>
-                </ul>
-            </div><!-- /.panel-body -->
-        </div><!-- /.panel -->
-
-    </div>
-    <div class="col-lg-9 col-md-9 col-sm-8">
-
-    <div class="profile-cover">
-        <div class="cover rounded shadow no-overflow">
-            <div class="inner-cover">
-                <!-- Start offcanvas btn group menu: This menu will take position at the top of profile cover (mobile only). -->
-                 <div class="btn-group cover-menu-mobile hidden-lg hidden-md"> 
-                     <button type="button" class="btn btn-theme btn-sm dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                     <ul class="dropdown-menu pull-right no-border" role="menu">
-                        <li routerLinkActive='active'><a routerLink="/profile/timeline"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
-                        <li routerLinkActive='active'><a routerLink="/profile/autherblogs"><i class="fa fa-fw fa-user"></i> <span>My Blogs</span></a></li>
-                        <li routerLinkActive='active'><a routerLink="/profile/followers"><i class="fa fa-fw fa-users"></i> <span>Followers</span> </a></li>
-                        <li routerLinkActive='active'><a routerLink="/profile/followings"><i class="fa fa-fw fa-users"></i><span>Followings </span></a></li>
-                        
-                    </ul> 
-                </div> 
-                <img  src="https://bootdey.com/img/Content/bg1.jpg" class="img-responsive full-width" alt="cover" style="max-height:200px;">
-            </div>
-            <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu">
-                <li routerLinkActive='active'><a routerLink="/profile/timeline"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
-                <li routerLinkActive='active'><a routerLink="/profile/autherblogs"><i class="fa fa-fw fa-user"></i> <span>My Blogs</span></a></li>
-                        <li routerLinkActive='active'><a  routerLink="/profile/followers"><i class="fa fa-fw fa-users"></i> <span>Followers</span> </a></li>
-                        <li routerLinkActive='active'><a  routerLink="/profile/followings"><i class="fa fa-fw fa-users"></i><span>Followings </span></a></li>
-                
-            </ul>
-        </div><!-- /.cover -->
-    </div><!-- /.profile-cover -->
-    <div class="divider"></div>
-    <div class="panel rounded shadow">
-        <!-- <form action="..."> -->
-            <input class="form-control input-lg no-border" [(ngModel)]="blog.title" rows="2" placeholder="What is your title ?...">
-            <input class="form-control input-lg no-border"  [(ngModel)]="blog.body" rows="2" placeholder="What are you doing ?...">
-            <input class="form-control input-lg no-border"  [(ngModel)]="blog.tags" rows="2" placeholder="tags ?...">
-        <!-- </form> -->
-        <div class="panel-footer">
-            <button class="btn btn-success pull-right mt-5" (click)="post($event)">POST</button>
-            <ul class="nav nav-pills">
-                <li><a ><i class="fa fa-user"></i></a></li>
-                <li><a ><i class="fa fa-map-marker"></i></a></li>
-                 <!-- <img  id="userImg" [src]="imageURL " *ngIf="imageURL && imageURL !== ''" /> -->
-                <span id="cam">
-                <label for="file-input">
-                    <li><a><i class="fa fa-camera" ></i></a></li>
-                  </label>
-                  <input id="file-input" type="file" (change)="onFileSelect($event)" />
-                </span>
-
-               
-         
-              
-                <li><a><i class="fa fa-smile-o"></i></a></li>
-            </ul><!-- /.nav nav-pills -->
-        </div><!-- /.panel-footer -->
-    </div><!-- /.panel -->
-
-    <router-outlet></router-outlet>
-    <div class="container">
     <div class="row">
-        <div class="col-md-9">
-            <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs">
-                <!-- begin timeline -->
-                <ul class="timeline">
-                    <li>
-                        <!-- begin timeline-time -->
-                        <div class="timeline-time">
-                            <span class="date">{{item.creartedate| date : 'EEEE dd,MMM/yyyy' }}</span>
-                            <span class="time">{{item.creartedate| date : 'h:mm a' }}</span>
-                        </div>
-                        <!-- end timeline-time -->
-                        <!-- begin timeline-icon -->
-                        <div class="timeline-icon">
-                            <a href="javascript:;">&nbsp;</a>
-                        </div>
-                        <!-- end timeline-icon -->
-                        <!-- begin timeline-body -->
-                        <div class="timeline-body">
-                            <div class="timeline-header">
-                                <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                        alt=""></span>
+        <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="panel rounded shadow">
+                <div class="panel-body">
+                    <div class="inner-all">
+                        <ul class="list-unstyled">
+                            <li class="text-center">
+                                <img data-no-retina="" class="img-circle img-responsive img-bordered-primary"
+                                    src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                            </li>
+                            <li class="text-center">
+                                <h3 class="text-capitalize">{{owner.firstName+" "+owner.lastName}}</h3>
+                                <!-- <p class="text-muted text-capitalize">web designer</p> -->
+                            </li>
+                            <li class="text-center">
+                                <h5 class="text-capitalize" style="color: indigo;">{{owner.job}}</h5>
+                            </li>
+                            <li><br></li>
+                            <li>
+                                <div class="btn-group-vertical btn-block">
+                                    <input class="form-control input-lg no-border" [(ngModel)]="search"
+                                        (keyup.enter)="onKey()" placeholder="Search...">
+                                    <a class="btn btn-default" routerLink="/editUser"><i
+                                            class="fa fa-cog pull-right"></i>Edit Account</a>
+                                    <a class="btn btn-default" (click)="logout()"><i
+                                            class="fa fa-sign-out pull-right"></i>Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /.panel -->
 
-                                <span class="username"><a  [routerLink]="['/bloggers/',item.author.username]">{{item.author.username}} </a> <small></small></span>
-                                <!-- <span class="pull-right text-muted">18 Views</span> -->
-                            </div>
-                            <div class="timeline-content">
-                                <p class="h3">
-                                    {{item.title}}
-                                </p>
-                                <p>
-                                    {{item.body}}
-                                </p>
-                                <p>
-                                    <img class="img-responsive pull-right" src="{{'http://localhost:3000//'+item.photo}}" alt="">
-                                  </p>
-                            </div>
-                            <div class="timeline-likes">
-                                <div class="stats-right">
-                                    <span class="stats-text">259 Shares</span>
-                                    <span class="stats-text">21 Comments</span>
-                                </div>
-                                <div class="stats">
-                                    <span class="fa-stack fa-fw stats-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                        <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                                    </span>
-                                    <span class="fa-stack fa-fw stats-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="stats-total">4.3k</span>
-                                </div>
-                            </div>
-                            <div class="timeline-footer">
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
-                                        class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-                            </div>
-                            <div class="timeline-comment-box">
-                                <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
-                                <div class="input">
-                                    <form action="">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control rounded-corner"
-                                                placeholder="Write a comment...">
-                                            <span class="input-group-btn p-l-10">
-                                                <button class="btn btn-primary f-s-12 rounded-corner"
-                                                    type="button">Comment</button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
+            <div class="panel panel-theme rounded shadow">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h3 class="panel-title">Contact</h3>
+                    </div>
+                    <div class="pull-right">
+                        <a href="https://www.facebook.com" class="btn btn-sm btn-success"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" class="btn btn-sm btn-success"><i
+                                class="fa fa-twitter"></i></a>
+                        <a href="https://www.google.com" class="btn btn-sm btn-success"><i
+                                class="fa fa-google-plus"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- /.panel-heading -->
+                <div class="panel-body no-padding rounded">
+                    <ul class="list-group no-margin">
+                        <li class="list-group-item"><i class="fa fa-envelope mr-5"></i> {{owner.email}}</li>
+                        <li class="list-group-item"><i class="fa fa-globe mr-5"></i> www.ToDo.com</li>
+                        <li class="list-group-item"><i class="fa fa-phone mr-5"></i> +6281 903 xxx xxx</li>
+                    </ul>
+                </div><!-- /.panel-body -->
+            </div><!-- /.panel -->
 
-                            </div>
-                        </div>  <!-- end timeline-body -->
-                    </li>
-                </ul>
-            </div>
         </div>
-    </div>
-</div>
+        <div class="col-lg-9 col-md-9 col-sm-8">
+
+            <div class="profile-cover">
+                <div class="cover rounded shadow no-overflow">
+                    <div class="inner-cover">
+                        <!-- Start offcanvas btn group menu: This menu will take position at the top of profile cover (mobile only). -->
+                        <div class="btn-group cover-menu-mobile hidden-lg hidden-md">
+                            <button type="button" class="btn btn-theme btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right no-border" role="menu">
+                                <li routerLinkActive='active'><a routerLink="/profile/timeline"><i
+                                            class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                                <li routerLinkActive='active'><a routerLink="/profile/autherblogs"><i
+                                            class="fa fa-fw fa-user"></i> <span>My Blogs</span></a></li>
+                                <li routerLinkActive='active'><a routerLink="/profile/followers"><i
+                                            class="fa fa-fw fa-users"></i> <span>Followers</span> </a></li>
+                                <li routerLinkActive='active'><a routerLink="/profile/followings"><i
+                                            class="fa fa-fw fa-users"></i><span>Followings </span></a></li>
+                                <li routerLinkActive='active'><a routerLink="/profile/suggestions"><i
+                                            class="fa fa-fw fa-users"></i><span>Suggestions </span></a></li>
     
-    </div>
+                            </ul>
+                        </div>
+                        <img src="https://bootdey.com/img/Content/bg1.jpg" class="img-responsive full-width" alt="cover"
+                            style="max-height:200px;">
+                    </div>
+                    <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu">
+                        <li routerLinkActive='active'><a routerLink="/profile/timeline"><i
+                                    class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                        <li routerLinkActive='active'><a routerLink="/profile/autherblogs"><i
+                                    class="fa fa-fw fa-user"></i> <span>My Blogs</span></a></li>
+                        <li routerLinkActive='active'><a routerLink="/profile/followers"><i
+                                    class="fa fa-fw fa-users"></i> <span>Followers</span> </a></li>
+                        <li routerLinkActive='active'><a routerLink="/profile/followings"><i
+                                    class="fa fa-fw fa-users"></i><span>Followings </span></a></li>
+                        <li routerLinkActive='active'><a routerLink="/profile/suggestions"><i
+                                    class="fa fa-fw fa-users"></i><span>Suggestions </span></a></li>
+    
+                    </ul>
+                </div><!-- /.cover -->
+            </div><!-- /.profile-cover -->
+            <div class="divider"></div>
+            <div class="panel rounded shadow">
+                <!-- <form action="..."> -->
+                <input class="form-control input-lg no-border" [(ngModel)]="blog.title" rows="2"
+                    placeholder="What is your title ?...">
+                <input class="form-control input-lg no-border" [(ngModel)]="blog.body" rows="2"
+                    placeholder="What are you doing ?...">
+                <input class="form-control input-lg no-border" [(ngModel)]="blog.tags" rows="2" placeholder="tags ?...">
+                <!-- </form> -->
+                <div class="panel-footer">
+                    <button class="btn btn-success pull-right mt-5" (click)="post($event)">POST</button>
+                    <ul class="nav nav-pills">
+                        <li><a><i class="fa fa-user"></i></a></li>
+                        <li><a><i class="fa fa-map-marker"></i></a></li>
+                        <!-- <img  id="userImg" [src]="imageURL " *ngIf="imageURL && imageURL !== ''" /> -->
+                        <span id="cam">
+                            <label for="file-input">
+                                <li><a><i class="fa fa-camera"></i></a></li>
+                            </label>
+                            <input id="file-input" type="file" (change)="onFileSelect($event)" />
+                        </span>
+
+
+
+
+                        <li><a><i class="fa fa-smile-o"></i></a></li>
+                    </ul><!-- /.nav nav-pills -->
+                </div><!-- /.panel-footer -->
+            </div><!-- /.panel -->
+
+            <router-outlet></router-outlet>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="panel panel-success rounded shadow" id="profile-post" *ngFor="let item of blogs">
+                            <!-- begin timeline -->
+                            <ul class="timeline">
+                                <li>
+                                    <!-- begin timeline-time -->
+                                    <div class="timeline-time">
+                                        <span class="date">{{item.creartedate| date : 'EEEE dd,MMM/yyyy' }}</span>
+                                        <span class="time">{{item.creartedate| date : 'h:mm a' }}</span>
+                                    </div>
+                                    <!-- end timeline-time -->
+                                    <!-- begin timeline-icon -->
+                                    <div class="timeline-icon">
+                                        <a href="javascript:;">&nbsp;</a>
+                                    </div>
+                                    <!-- end timeline-icon -->
+                                    <!-- begin timeline-body -->
+                                    <div class="timeline-body">
+                                        <div class="timeline-header">
+                                            <span class="userimage"><img
+                                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                    alt=""></span>
+
+                                            <span class="username"><a
+                                                    [routerLink]="['/bloggers/',item.author.username]">{{item.author.username}}
+                                                </a> <small></small></span>
+                                            <!-- <span class="pull-right text-muted">18 Views</span> -->
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p class="h3">
+                                                {{item.title}}
+                                            </p>
+                                            <p>
+                                                {{item.body}}
+                                            </p>
+                                            <p>
+                                                <img class="img-responsive pull-right"
+                                                    src="{{'http://localhost:3000//'+item.photo}}" alt="">
+                                            </p>
+                                        </div>
+                                        <div class="timeline-likes">
+                                            <div class="stats-right">
+                                                <span class="stats-text">259 Shares</span>
+                                                <span class="stats-text">21 Comments</span>
+                                            </div>
+                                            <div class="stats">
+                                                <span class="fa-stack fa-fw stats-icon">
+                                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                                    <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
+                                                </span>
+                                                <span class="fa-stack fa-fw stats-icon">
+                                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                                <span class="stats-total">4.3k</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-footer">
+                                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                                    class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                                    class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
+                                            <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i
+                                                    class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                                        </div>
+                                        <div class="timeline-comment-box">
+                                            <div class="user"><img
+                                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
+                                            <div class="input">
+                                                <form action="">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control rounded-corner"
+                                                            placeholder="Write a comment...">
+                                                        <span class="input-group-btn p-l-10">
+                                                            <button class="btn btn-primary f-s-12 rounded-corner"
+                                                                type="button">Comment</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div> <!-- end timeline-body -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
