@@ -81,8 +81,8 @@
                         </div>
                         <div class="timeline-likes">
                             <div class="timeline-footer">
-                                <div class="stats-right" *ngFor="let tags of item.tags">
-                                    <span class="stats-text" style="margin-left:6px">{{ tags }}</span>
+                                <div class="stats-right">
+                                    <span class="stats-text"  *ngFor="let t of item.tags" style="margin-left:6px">{{t}}</span>
                                 </div>
                                 <a class="m-r-15 text-inverse-lighter" style="cursor: pointer;"
                                     (click)="showComments($event)"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i>Show
