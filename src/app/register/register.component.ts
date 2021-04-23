@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  selectedFile: File;
+  newuserr= new FormData();
   constructor(public userService : UserService , public router : Router) { }
   newUser: User =new User("","","","","","","",[],[]);
   ngOnInit(): void {
@@ -19,6 +20,11 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.newUser).subscribe(
       a=>this.router.navigate(['/home'])
     )
+  }
+  onFileSelect(event) {
+    this.selectedFile = <File>event.target.files[0];
+     this.newuserr.append('photo', this.selectedFile, this.selectedFile.name);
+    console.log(this.selectedFile);
   }
 
 }
